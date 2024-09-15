@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
  --appWhite: #FFF;
   --appBlack: #000;
@@ -255,3 +256,24 @@ h5 {
   @apply w-full lg:max-h-[450px] lg:h-[450px] flex flex-wrap overflow-hidden items-center justify-start;
 }
 /* card offer section goes here */
+
+/* landingBanner Section  Goes here */
+
+.bannerboxWrapper {
+  @apply md:w-3/12 bg-white border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
+}
+
+.bannerboxWrapper .hompagecardh2 {
+  @apply font-sans font-semibold text-base text-appBlack;
+
+}
+
+.bannerboxWrapper .hompagecardPara{
+  @apply font-serif font-medium lg:text-xs text-appBlack lg:mt-1 text-center;
+}
+
+
+.h2Banner{
+    @apply font-sans font-semibold text-4xl text-appWhite;
+}
+/* landingBanner Section ends here */
