@@ -1,9 +1,10 @@
 import Image from "next/image";
+import LandingPage from "./pages/LandingPage";
 
 export default function Home() {
   return (
     <>
-      <h1> Coming Soon </h1>
+      <LandingPage />
     </>
   );
 }
