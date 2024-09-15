@@ -149,7 +149,7 @@ h5 {
 /* Logistics landing page section goes here */
 
 .headWrapper {
-  @apply flex flex-col w-full bg-appTitleBgColor lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24]; 
+  @apply flex flex-col w-full bg-appWhite lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24]; 
 }
 
 
