@@ -154,12 +154,12 @@ h5 {
 
 
 .headWrapper .hompagecardh2 {
-  @apply font-semibold text-4xl text-appWhite font-mono;
+  @apply font-semibold text-4xl text-appBlack font-mono;
 
 }
 
 .headWrapper .hompagecardPara {
-   @apply font-serif font-medium lg:text-lg text-appWhite lg:mt-4;
+   @apply font-serif font-medium lg:text-lg text-appBlack lg:mt-4;
 
 }
 
@@ -184,6 +184,10 @@ h5 {
   @apply font-serif font-medium lg:text-lg text-appWhite lg:mt-4;
 }
 
+.cardWrapper .CardImage {
+  @apply w-6/12 lg:max-h-64 lg:h-64 flex flex-wrap overflow-hidden items-center justify-start;
+}
+
 
 /* this code base is for card component3 */
 .cardWrapper .CardTransparent {
@@ -203,6 +207,51 @@ h5 {
 }
 /* this code base is for card component3 */
 
-.cardWrapper .CardImage {
-  @apply w-6/12 lg:max-h-64 lg:h-64 flex flex-wrap overflow-hidden items-center justify-start;
+/* this sectioin is for card offer */
+
+
+.offerheadWrapper {
+  @apply flex flex-col w-full lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24]; 
 }
+
+
+.offerheadWrapper .hompagecardh2 {
+  @apply font-bold text-4xl text-appWhite font-sans italic;
+
+}
+
+.offerheadWrapper .hompagecardPara {
+   @apply font-serif font-medium lg:text-lg text-appBlack lg:mt-4;
+
+}
+
+.offerWrapper {
+  @apply flex flex-col w-full bg-appTitleBgColor overflow-hidden relative; 
+}
+
+.offerWrapper:hover {
+  @apply shadow-lg shadow-appBanner/50 ; 
+}
+
+.offerWrapper .Card {
+  @apply w-full bg-appBanner lg:max-h-24 lg:h-24 lg:px-4 lg:py-2;
+}
+
+.offerWrapper .Card:hover {
+  @apply bg-appNav ;
+}
+
+.offerWrapper .Card .hompagecardh2 {
+  @apply font-sans font-semibold text-lg text-appWhite;
+
+}
+
+.offerWrapper .Card .hompagecardPara{
+  @apply font-serif font-medium lg:text-base text-appWhite lg:mt-1;
+}
+
+
+.offerWrapper .CardImage {
+  @apply w-full lg:max-h-[450px] lg:h-[450px] flex flex-wrap overflow-hidden items-center justify-start;
+}
+/* card offer section goes here */

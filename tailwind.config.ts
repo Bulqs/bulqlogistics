@@ -21,6 +21,9 @@ const config: Config = {
         appYellow: '#eef21c',
         appLightBlack: '#1C1C1C',
       },
+      boxShadow: {
+        'custom': '10px 10px 30px rgba(0, 0, 0, 0.3)', // Custom shadow
+      },
     },
   },
   plugins: [],
