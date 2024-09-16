@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { IoMdCloseCircle } from 'react-icons/io';
 
-const BannerStepForm = () => {
+const BannerStepForm: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1);
 
     const handleNext = () => {
