@@ -264,15 +264,21 @@ h5 {
 }
 
 .bannerboxWrapper:hover {
-  @apply bg-appNav cursor-pointer;  
+  @apply bg-appBlack cursor-pointer transition-all duration-300 ease-in-out hover:scale-125 hover:shadow-lg hover:shadow-appTitleBgColor;  
 }
 
-.bannerboxWrapper .hompagecardh2 {
-  @apply font-sans font-semibold text-base text-appWhite;
+
+.bannerboxWrapper:hover .bannerboxcardh4 {
+  @apply text-appBlack bg-appWhite;  
+}
+
+
+.bannerboxWrapper .bannerboxcardh4 {
+  @apply font-sans font-semibold flex text-center text-base text-appWhite bg-appBanner px-2 py-1 rounded-2xl;
 
 }
 
-.bannerboxWrapper .hompagecardPara{
+.bannerboxWrapper .bannerboxcardPara{
   @apply font-sans font-medium lg:text-xs text-appWhite lg:mt-1 text-center ;
 }
 
