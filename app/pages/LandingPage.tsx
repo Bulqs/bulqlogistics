@@ -12,13 +12,20 @@ import OfferCardHeading from '../components/landingpageoffercards/OfferCardHeadi
 import LandingBanner from '../components/landingbanner/LandingBanner';
 import Image, { StaticImageData } from 'next/image';
 import bannerBacground from '../../public/images/banner2.png';
+import BannerStepForm from '../components/bannerform/BannerStepForm';
 
 const LandingPage = () => {
     return (
         <div className='w-full bg-appWhite lg:py-14 lg:pb-24'>
 
-            <div className="w-full py-16 relative">
+           
 
+
+            <div className="w-full py-16 relative bg-yellow-700">
+                <BannerStepForm />
+            </div>
+
+            <div className="w-full py-16 relative">
                 <LandingBanner /> 
             </div>
 

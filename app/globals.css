@@ -287,3 +287,14 @@ h5 {
     @apply font-sans font-semibold text-4xl text-appBlack;
 }
 /* landingBanner Section ends here */
+
+
+/* modal close button */
+.modalClose {
+  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-blue-900 text-white rounded-md border-2 border-appBlue;
+}
+
+.modalClose:hover {
+  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-appBlack text-white rounded-2xl border-2 border-appWhite;
+}
+/* modal close button */
