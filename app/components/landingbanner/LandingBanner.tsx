@@ -24,32 +24,19 @@ const LandingBanner = () => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCard(null);
-  };
-
-  // Deliver Package
   const openModal2 = (title: string, description: string) => {
     setSelectedCard2({ title, description });
     setIsModalOpen2(true);
   };
 
-  const closeModal2 = () => {
-    setIsModalOpen2(false);
-    setSelectedCard2(null);
-  };
-
-  // This is for Book a Drop Off
   const openModal3 = (title: string, description: string) => {
     setSelectedCard3({ title, description });
     setIsModalOpen3(true);
   };
 
-  const closeModal3 = () => {
-    setIsModalOpen3(false);
-    setSelectedCard3(null);
-  };
+  const closeModal = () => setIsModalOpen(false);
+  const closeModal2 = () => setIsModalOpen2(false);
+  const closeModal3 = () => setIsModalOpen3(false);
 
 
   return (
@@ -85,10 +72,13 @@ const LandingBanner = () => {
 
       {isModalOpen && selectedCard && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="flex flex-col bg-appBlue w-11/12 p-8 rounded-lg shadow-lg">
+          <div className="flex flex-col items-center justify-center bg-appBlue/95 w-11/12 p-8 rounded-lg shadow-lg">
+            <div className="flex">
+              <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
+            </div>
+         
             <div className=" flex p-8 md:gap-12">
-              {/* <h3 className="text-xl font-bold">{selectedCard.title}</h3>
-            <p>{selectedCard.description}</p> */}
+            
               <LandingBannerCard
                 title="From Me to Another"
                 description="Request Pick off and Drop off Services"
@@ -115,7 +105,7 @@ const LandingBanner = () => {
             </div>
 
             <div className="flex px-8">
-              <button onClick={closeModal} className="flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-blue-900 text-white rounded">
+              <button onClick={closeModal} className="modalClose">
                 <IoMdCloseCircle className='text-appRed' /> Close
               </button>
             </div>
@@ -127,16 +117,50 @@ const LandingBanner = () => {
 
 
       {isModalOpen2 && selectedCard2 && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-4 rounded-lg shadow-lg">
-            {/* <h3 className="text-xl font-bold">{selectedCard2.title}</h3>
-            <p>{selectedCard2.description}</p> */}
-            <button onClick={closeModal2} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
-              Close
-            </button>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="flex flex-col items-center justify-center bg-appBlue/95 w-11/12 p-8 rounded-lg shadow-lg">
+            <div className="flex">
+              <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Deliver Package</h3>
+            </div>
+
+            <div className=" flex p-8 md:gap-12">
+            
+              <LandingBannerCard
+                title="From Me to Another"
+                description="Request Pick off and Drop off Services"
+              // onClick={openModal}
+              />
+
+              <LandingBannerCard
+                title="From Another to Me"
+                description="Request Pick off and Drop off Services"
+              // onClick={openModal}
+              />
+
+              <LandingBannerCard
+                title="Specif Address To Specific Address"
+                description="Request Pick off and Drop off Services"
+              // onClick={openModal}
+              />
+
+              <LandingBannerCard
+                title="Pick up only"
+                description="Request Pick off and Drop off Services"
+              // onClick={openModal}
+              />
+            </div>
+
+            <div className="flex px-8">
+              <button onClick={closeModal2} className="modalClose">
+                <IoMdCloseCircle className='text-appRed' /> Close
+              </button>
+            </div>
+
           </div>
+
         </div>
       )}
+
 
 
       {isModalOpen3 && selectedCard3 && (
