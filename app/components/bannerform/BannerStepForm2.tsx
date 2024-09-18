@@ -8,7 +8,7 @@ import Button from '../inputs/Button';
 import WhoToWhoHeading from '../inputs/WhoToWhoHeading';
 import WhoToWhoHeading2 from '../inputs/WhoToWhoHeading2';
 
-const BannerStepForm: React.FC = () => {
+const BannerStepForm2: React.FC = () => {
 
     const [isInnerModalOpen, setIsInnerModalOpen] = useState<boolean>(false);
 
@@ -57,13 +57,13 @@ const BannerStepForm: React.FC = () => {
                         <div>
 
                             <WhoToWhoHeading
-                                text="From Me To Another"
+                                text="From Another To Me"
                                 bgColor="bg-appWhite"
                                 textColor="text-appBlack"
                                 additionalClasses="rounded-lg"
                             />
 
-                           
+
                             <WhoToWhoHeading2
                                 text="Send Package With Just A Button"
                                 bgColor="bg-appTitleBgColor"
@@ -587,8 +587,8 @@ const BannerStepForm: React.FC = () => {
                         {/* Navigation Buttons */}
                         <div className="flex justify-between items-center pt-0 lg:mt-3">
                             {currentStep > 1 && (
-                                
-                                 <Button type="submit" onClick={handlePrevious}>
+
+                                <Button type="submit" onClick={handlePrevious}>
                                     PREVIOUS STEP
                                 </Button>
                             )}
@@ -607,4 +607,4 @@ const BannerStepForm: React.FC = () => {
     );
 }
 
-export default BannerStepForm;
+export default BannerStepForm2;

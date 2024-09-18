@@ -5,6 +5,7 @@ import LandingBannerSearch from './LandingBannerSearch';
 import { IoMdCloseCircle } from "react-icons/io";
 import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
+import BannerStepForm2 from '../bannerform/BannerStepForm2';
 
 
 // interface LandingPageBannerBackgroundImgProps {
@@ -18,6 +19,7 @@ const LandingBanner = () => {
   const [isModalOpen2, setIsModalOpen2] = useState<boolean>(false);
   const [isModalOpen3, setIsModalOpen3] = useState<boolean>(false);
   const [isInnerModalOpen, setIsInnerModalOpen] = useState<boolean>(false); // New state for inner modal
+  const [isInnerModalOpen2, setIsInnerModalOpen2] = useState<boolean>(false);
   const [selectedCard, setSelectedCard] = useState<{ title: string; description: string } | null>(null);
   const [selectedCard2, setSelectedCard2] = useState<{ title: string; description: string } | null>(null);
   const [selectedCard3, setSelectedCard3] = useState<{ title: string; description: string } | null>(null);
@@ -25,16 +27,6 @@ const LandingBanner = () => {
   const openModal = (title: string, description: string) => {
     setSelectedCard({ title, description });
     setIsModalOpen(true);
-  };
-
-  const openModal2 = (title: string, description: string) => {
-    setSelectedCard2({ title, description });
-    setIsModalOpen2(true);
-  };
-
-  const openModal3 = (title: string, description: string) => {
-    setSelectedCard3({ title, description });
-    setIsModalOpen3(true);
   };
 
   const openInnerModal = () => {
@@ -46,7 +38,28 @@ const LandingBanner = () => {
     setIsInnerModalOpen(false); // Close inner modal if open
   };
 
-  const closeModal2 = () => setIsModalOpen2(false);
+
+  const openModal2 = (title: string, description: string) => {
+    setSelectedCard2({ title, description });
+    setIsModalOpen2(true);
+  };
+
+  const openInnerModal2 = () => {
+    setIsInnerModalOpen2(true);
+  };
+
+  const closeModal2 = () => {
+    setIsModalOpen2(false);
+    setIsInnerModalOpen2(false)
+  };
+
+
+
+  const openModal3 = (title: string, description: string) => {
+    setSelectedCard3({ title, description });
+    setIsModalOpen3(true);
+  };
+ 
   const closeModal3 = () => setIsModalOpen3(false);
 
 
@@ -83,7 +96,7 @@ const LandingBanner = () => {
 
       {isModalOpen && selectedCard && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="flex flex-col items-center justify-center bg-appBlue/95 w-11/12 p-8 rounded-lg shadow-lg">
+          <div className="flex flex-col items-center justify-center bg-appBlack/80 w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor">
             <div className="flex">
               <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
             </div>
@@ -99,6 +112,7 @@ const LandingBanner = () => {
               <LandingBannerCard2
                 title="From Another to Me"
                 description="Request Pick off and Drop off Services"
+                onClick={openInnerModal2}
               />
 
               <LandingBannerCard2
@@ -114,18 +128,31 @@ const LandingBanner = () => {
 
             <div className="flex px-8">
               <button onClick={closeModal} className="modalClose">
-                <IoMdCloseCircle className='text-appRed' /> Close
+                <IoMdCloseCircle className='text-appWhite' /> Close
               </button>
             </div>
           </div>
 
           {/* Render inner modal on top of the first modal */}
           {isInnerModalOpen && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg">
+            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
                 <BannerStepForm /> {/* Place the form here */}
-                <button onClick={() => setIsInnerModalOpen(false)} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
-                  Close Inner Modal
+                <button onClick={() => setIsInnerModalOpen(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                  <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
+                </button>
+              </div>
+            </div>
+          )}
+
+
+          {/* Render inner midek on top of the first model for second div */}
+          {isInnerModalOpen2 && (
+            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+                <BannerStepForm2 /> {/* Place the form here */}
+                <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                  <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
                 </button>
               </div>
             </div>
@@ -137,7 +164,7 @@ const LandingBanner = () => {
 
       {isModalOpen2 && selectedCard2 && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="flex flex-col items-center justify-center bg-appBlue/95 w-11/12 p-8 rounded-lg shadow-lg">
+          <div className="flex flex-col items-center justify-center bg-appBlack/80 w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor">
             <div className="flex">
               <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Deliver Package</h3>
             </div>
