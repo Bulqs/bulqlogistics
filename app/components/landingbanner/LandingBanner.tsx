@@ -7,11 +7,6 @@ import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
 import BannerStepForm2 from '../bannerform/BannerStepForm2';
 
-
-// interface LandingPageBannerBackgroundImgProps {
-//   imageSrc: string;
-// }
-
 const LandingBanner = () => {
 
   // State for tracking modal open status
@@ -59,7 +54,7 @@ const LandingBanner = () => {
     setSelectedCard3({ title, description });
     setIsModalOpen3(true);
   };
- 
+
   const closeModal3 = () => setIsModalOpen3(false);
 
 
@@ -100,9 +95,9 @@ const LandingBanner = () => {
             <div className="flex">
               <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
             </div>
-         
+
             <div className=" flex p-8 md:gap-12 datty">
-            
+
               <LandingBannerCard2
                 title="From Me to Another"
                 description="Request Pick off and Drop off Services"
@@ -160,7 +155,7 @@ const LandingBanner = () => {
 
         </div>
       )}
-
+      {/* first modal section ends here */}
 
       {isModalOpen2 && selectedCard2 && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -170,17 +165,17 @@ const LandingBanner = () => {
             </div>
 
             <div className=" flex p-8 md:gap-12">
-            
+
               <LandingBannerCard2
                 title="From Me to Another"
                 description="Request Pick off and Drop off Services"
-              // onClick={openModal}
+                onClick={openInnerModal}
               />
 
               <LandingBannerCard2
                 title="From Another to Me"
                 description="Request Pick off and Drop off Services"
-              // onClick={openModal}
+                onClick={openInnerModal}
               />
 
               <LandingBannerCard2
@@ -204,9 +199,35 @@ const LandingBanner = () => {
 
           </div>
 
+
+          {/* Render inner modal on top of the first modal */}
+          {isInnerModalOpen && (
+            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+                <BannerStepForm /> {/* Place the form here */}
+                <button onClick={() => setIsInnerModalOpen(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                  <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
+                </button>
+              </div>
+            </div>
+          )}
+
+
+          {/* Render inner midek on top of the first model for second div */}
+          {isInnerModalOpen2 && (
+            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+                <BannerStepForm2 /> {/* Place the form here */}
+                <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                  <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
+                </button>
+              </div>
+            </div>
+          )}
+
         </div>
       )}
-
+      {/* second modal section ends here */}
 
 
       {isModalOpen3 && selectedCard3 && (
