@@ -7,11 +7,6 @@ import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
 import BannerStepForm2 from '../bannerform/BannerStepForm2';
 
-
-// interface LandingPageBannerBackgroundImgProps {
-//   imageSrc: string;
-// }
-
 const LandingBanner = () => {
 
   // State for tracking modal open status
@@ -229,7 +224,6 @@ const LandingBanner = () => {
               </div>
             </div>
           )}
-
 
         </div>
       )}
