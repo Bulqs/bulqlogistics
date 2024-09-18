@@ -59,7 +59,7 @@ const LandingBanner = () => {
     setSelectedCard3({ title, description });
     setIsModalOpen3(true);
   };
- 
+
   const closeModal3 = () => setIsModalOpen3(false);
 
 
@@ -100,9 +100,9 @@ const LandingBanner = () => {
             <div className="flex">
               <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
             </div>
-         
+
             <div className=" flex p-8 md:gap-12 datty">
-            
+
               <LandingBannerCard2
                 title="From Me to Another"
                 description="Request Pick off and Drop off Services"
@@ -160,7 +160,7 @@ const LandingBanner = () => {
 
         </div>
       )}
-
+      {/* first modal section ends here */}
 
       {isModalOpen2 && selectedCard2 && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -170,7 +170,7 @@ const LandingBanner = () => {
             </div>
 
             <div className=" flex p-8 md:gap-12">
-            
+
               <LandingBannerCard2
                 title="From Me to Another"
                 description="Request Pick off and Drop off Services"
@@ -204,7 +204,7 @@ const LandingBanner = () => {
 
           </div>
 
-          
+
           {/* Render inner modal on top of the first modal */}
           {isInnerModalOpen && (
             <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
@@ -233,7 +233,7 @@ const LandingBanner = () => {
 
         </div>
       )}
-
+      {/* second modal section ends here */}
 
 
       {isModalOpen3 && selectedCard3 && (
