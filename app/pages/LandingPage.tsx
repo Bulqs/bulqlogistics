@@ -21,9 +21,9 @@ const LandingPage = () => {
            
 
 
-            <div className="w-full py-16 relative bg-yellow-700">
+            {/* <div className="w-full py-16 relative bg-yellow-700">
                 <BannerStepForm />
-            </div>
+            </div> */}
 
             <div className="w-full py-16 relative">
                 <LandingBanner /> 

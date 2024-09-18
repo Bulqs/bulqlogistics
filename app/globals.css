@@ -282,6 +282,33 @@ h5 {
   @apply font-sans font-medium lg:text-xs text-appWhite lg:mt-1 text-center ;
 }
 
+/* for bannerboxwrapper2 */
+.bannerboxWrapper2 {
+  @apply md:w-3/12 bg-appWhite text-appBlack border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
+}
+
+.bannerboxWrapper2:hover {
+  @apply bg-appBlack cursor-pointer transition-all duration-300 ease-in-out hover:scale-125 hover:shadow-lg hover:shadow-appTitleBgColor;  
+}
+
+
+.bannerboxWrapper2 .bannerboxcardh4 {
+  @apply font-sans font-semibold flex text-center text-base text-appWhite bg-appBlack px-2 py-1 rounded-2xl;
+
+}
+
+.bannerboxWrapper2:hover .bannerboxcardh4 {
+  @apply text-appBlack bg-appWhite;  
+}
+
+.bannerboxWrapper2 .bannerboxcardPara{
+  @apply font-sans lg:text-xs text-appBlack lg:mt-1 text-center font-semibold ;
+}
+
+.bannerboxWrapper2:hover .bannerboxcardPara{
+  @apply font-sans font-medium lg:text-xs text-appWhite ;
+}
+
 
 .h2Banner{
     @apply font-sans font-semibold text-4xl text-appBlack;
@@ -291,10 +318,10 @@ h5 {
 
 /* modal close button */
 .modalClose {
-  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-blue-900 text-white rounded-md border-2 border-appBlue;
+  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-red-900 text-white rounded-md border-2 ;
 }
 
 .modalClose:hover {
-  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-appBlack text-white rounded-2xl border-2 border-appWhite;
+  @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-appBlack text-white rounded-xl border-2 border-appWhite;
 }
 /* modal close button */
