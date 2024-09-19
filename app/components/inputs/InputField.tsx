@@ -24,6 +24,7 @@ const InputField: React.FC<InputFieldProps> = ({
     return (
         <>
             {dropdownOptions ? (
+                // Render a select dropdown if dropdownOptions is provided
                 <select
                     id={id}
                     name={name}
@@ -42,8 +43,9 @@ const InputField: React.FC<InputFieldProps> = ({
                     ))}
                 </select>
             ) : (
+                // Render an input field if no dropdownOptions are provided
                 <input
-                    type={type}
+                    type={type}  // Only include 'type' for <input>
                     id={id}
                     name={name}
                     value={value}
