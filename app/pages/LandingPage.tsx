@@ -13,20 +13,18 @@ import LandingBanner from '../components/landingbanner/LandingBanner';
 import Image, { StaticImageData } from 'next/image';
 import bannerBacground from '../../public/images/banner2.png';
 import BannerStepForm from '../components/bannerform/BannerStepForm';
+import Header from '../components/Header';
 
 const LandingPage = () => {
     return (
-        <div className='w-full bg-appWhite lg:py-14 lg:pb-24'>
+        <div className='w-full bg-appWhite lg:pb-24'>
 
-           
-
-
-            {/* <div className="w-full py-16 relative bg-yellow-700">
-                <BannerStepForm />
-            </div> */}
+            <div className="w-full flex m-0 p-0">
+                <Header />
+            </div>
 
             <div className="w-full py-16 relative">
-                <LandingBanner /> 
+                <LandingBanner />
             </div>
 
             <div className="flex flex-wrap items-center justify-center lg:py-20 lg:mb-12 bg-appTitleBgColor">

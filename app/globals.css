@@ -325,3 +325,20 @@ h5 {
   @apply flex items-center justify-center gap-2 mt-4 px-4 py-2 bg-appBlack text-white rounded-xl border-2 border-appWhite;
 }
 /* modal close button */
+
+
+/* Logistics Header Section Goes Here*/
+
+.logisticsHeaderUl{
+  @apply overflow-hidden absolute mt-6 w-48 md:bg-appTitleBgColor text-white rounded-md shadow-md shadow-appTitleBgColor md:border-b md:border-2 md:border-appTitleBgColor;
+}
+
+.logisticsHeaderLi {
+  @apply px-4 py-2 font-medium md:font-semibold hover:bg-gray-100 hover:text-appTitleBgColor;
+}
+
+.logisticsHeaderp {
+  @apply font-semibold text-appWhite border-2 border-appNav hover:border-appTitleBgColor px-2 hover:bg-appTitleBgColor hover:text-appWhite;
+} 
+
+/* Logisteics Header Section Ends Here */
