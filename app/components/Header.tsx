@@ -170,7 +170,7 @@ const Header: React.FC = () => {
                         </Link>
 
                         <div className="flex w-6/12 items-center justify-between mt-4">
-                            <Link href="/login" className="block px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">
+                            <Link href="/signin" className="block px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">
                                 Login
                             </Link>
                             <Link href="" className="block px-4 py-1 bg-appBlack text-appWhite font-semibold">
