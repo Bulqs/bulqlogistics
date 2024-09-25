@@ -8,8 +8,24 @@ const config: Config = {
     
   ],
   theme: {
-    
     extend: {
+      keyframes: {
+        roundedTransition: {
+          '0%, 100%': {
+            borderRadius: '100%',
+            width: '5%',
+            height: '5%',
+          },
+          '50%': {
+            borderRadius: '0%',
+            width: '100%',
+            height: '100%',
+          },
+        },
+      },
+      animation: {
+        roundedTransition: 'roundedTransition 4s ease-in-out infinite',
+      },
       objectFit: ['responsive', 'hover', 'focus'],
       colors: {
         appWhite: '#FFF',

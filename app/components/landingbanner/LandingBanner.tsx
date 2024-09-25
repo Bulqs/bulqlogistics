@@ -6,6 +6,8 @@ import { IoMdCloseCircle } from "react-icons/io";
 import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
 import BannerStepForm2 from '../bannerform/BannerStepForm2';
+import logo from '../../../public/images/logo4.svg';
+import BannerStepForm3 from '../bannerform/BannerStepForm3';
 
 const LandingBanner = () => {
 
@@ -59,7 +61,13 @@ const LandingBanner = () => {
 
 
   return (
-    <div className=''>
+    <div className=''
+      // style={{
+      //   backgroundImage: `url(${logo.src})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
+    >
       <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
         <h2 className='h2Banner'> Ship To Any Part Of The World With Peace Of Mind </h2>
       </div>
@@ -216,12 +224,14 @@ const LandingBanner = () => {
           {/* Render inner midek on top of the first model for second div */}
           {isInnerModalOpen2 && (
             <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
+
                 <BannerStepForm2 /> {/* Place the form here */}
                 <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
                   <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
                 </button>
               </div>
+              
             </div>
           )}
 
@@ -231,12 +241,14 @@ const LandingBanner = () => {
 
 
       {isModalOpen3 && selectedCard3 && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-4 rounded-lg shadow-lg">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
             {/* <h3 className="text-xl font-bold">{selectedCard3.title}</h3>
             <p>{selectedCard3.description}</p> */}
-            <button onClick={closeModal3} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
-              Close
+            <BannerStepForm3 />
+           
+            <button onClick={closeModal3} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+              <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
             </button>
           </div>
         </div>

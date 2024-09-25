@@ -219,7 +219,7 @@ h5 {
 
 
 .h2Banner{
-    @apply font-sans font-semibold text-4xl text-appBlack;
+    @apply font-sans font-semibold text-4xl text-white;
 }
 /* landingBanner Section ends here */
 
@@ -248,5 +248,10 @@ h5 {
 .logisticsHeaderp {
   @apply font-semibold text-appWhite border-2 border-appNav hover:border-appTitleBgColor px-2 hover:bg-appTitleBgColor hover:text-appWhite;
 } 
-
 /* Logisteics Header Section Ends Here */
+
+/* animation toggle section goes here */
+.animation-paused {
+  animation-play-state: paused;
+}
+/* animation toggle section ends here */
