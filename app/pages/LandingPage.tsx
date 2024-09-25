@@ -17,74 +17,75 @@ import Header from '../components/Header';
 
 const LandingPage = () => {
     return (
-        <div className='w-full bg-appWhite lg:pb-24'>
+        <>
+            <div className='w-full bg-appWhite lg:pb-24'>
 
-            <div className="w-full flex m-0 p-0">
+                {/* <div className="w-full flex m-0 p-0">
                 <Header />
-            </div>
+            </div> */}
 
-            <div className="w-full py-16 relative">
-                <LandingBanner />
-            </div>
+                <div className="w-full py-16 relative">
+                    <LandingBanner />
+                </div>
 
-            <div className="flex flex-wrap items-center justify-center lg:py-20 lg:mb-12 bg-appTitleBgColor">
+                <div className="flex flex-wrap items-center justify-center lg:py-20 lg:mb-12 bg-appTitleBgColor">
 
-                <OfferCardHeading
-                    title="What We Offer"
-                />
-
-                <div className=' grid md:grid-cols-3 lg:px-24 lg:gap-y-8 lg:py-4  lg:gap-x-10 md:mt-8'>
-
-                    <OfferCard
-                        title="Nationwide Delivery"
-                        description="Bulq shipping offers effective and prompt dor-to-door delivery"
-                        imageSrc={ecommerce}
+                    <OfferCardHeading
+                        title="What We Offer"
                     />
 
-                    <OfferCard
-                        title="Payment Delivery"
-                        description="bulq shipping offers payment on delivery to any part of the nation"
-                        imageSrc={ecommerce}
-                    />
+                    <div className=' grid md:grid-cols-3 lg:px-24 lg:gap-y-8 lg:py-4  lg:gap-x-10 md:mt-8'>
 
-                    <OfferCard
-                        title="E-commerce"
-                        description="Bulq shipping offers E-commerce services on all kind of goods"
-                        imageSrc={ecommerce}
-                    />
+                        <OfferCard
+                            title="Nationwide Delivery"
+                            description="Bulq shipping offers effective and prompt dor-to-door delivery"
+                            imageSrc={ecommerce}
+                        />
+
+                        <OfferCard
+                            title="Payment Delivery"
+                            description="bulq shipping offers payment on delivery to any part of the nation"
+                            imageSrc={ecommerce}
+                        />
+
+                        <OfferCard
+                            title="E-commerce"
+                            description="Bulq shipping offers E-commerce services on all kind of goods"
+                            imageSrc={ecommerce}
+                        />
+
+                    </div>
 
                 </div>
 
+
+                <div className='flex flex-col lg:px-24 lg:gap-y-8'>
+                    <CardComponentHeading
+                        title="Shipping Solution For Our Customers"
+                        description="Quickly integrate powerful solutions that gives you more flexibility and control over your percel shipping and logistics progress"
+                    />
+
+                    <CardComponent3
+                        title="E-Commerce"
+                        description="We Provide E-commerce services where you buy and also ship to any location across the country"
+                        imageSrc={ecommerce}
+                    />
+
+                    <CardComponent2
+                        title="Nationwide Delivery"
+                        description="We provide logistics services where we deliver to all customers in any location across the country"
+                        imageSrc={nationwide}
+                    />
+
+                    <CardComponent
+                        title="Warehousing Support"
+                        description="We take care of your storage and distribution logistics needs, utilizing our strategic network of warehouses across the country."
+                        imageSrc={logistics}
+                    />
+                </div>
             </div>
-
-
-            <div className='flex flex-col lg:px-24 lg:gap-y-8'>
-                <CardComponentHeading
-                    title="Shipping Solution For Our Customers"
-                    description="Quickly integrate powerful solutions that gives you more flexibility and control over your percel shipping and logistics progress"
-                />
-
-                <CardComponent3
-                    title="E-Commerce"
-                    description="We Provide E-commerce services where you buy and also ship to any location across the country"
-                    imageSrc={ecommerce}
-                />
-
-                <CardComponent2
-                    title="Nationwide Delivery"
-                    description="We provide logistics services where we deliver to all customers in any location across the country"
-                    imageSrc={nationwide}
-                />
-
-                <CardComponent
-                    title="Warehousing Support"
-                    description="We take care of your storage and distribution logistics needs, utilizing our strategic network of warehouses across the country."
-                    imageSrc={logistics}
-                />
-            </div>
-
-
-        </div>
+            <NewLetterSection />
+        </>
     )
 }
 
