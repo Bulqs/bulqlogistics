@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
 import logo from '../../public/images/logo4.svg';
+import shipping from '../../public/images/shipping.jpg';
 import Button from '../components/inputs/Button';
 import Link from 'next/link';
 import InputField from '../components/inputs/InputField';
@@ -11,6 +12,7 @@ import { RiLoginCircleFill } from "react-icons/ri";
 
 
 const page: React.FC = () => {
+    const [isPaused, setIsPaused] = useState(false);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -19,8 +21,14 @@ const page: React.FC = () => {
 
 
     return (
-        <div className='w-full bg-appBlue/20'>
-            <div className="flex min-h-full flex-1 p-10">
+        <div className='w-full bg-appBlue/20'
+            style={{
+                backgroundImage: `url(${shipping.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            <div className="flex min-h-full flex-1 p-10 bg-black/70">
                 <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 lg:w-[700px]">
                     <div className=" w-full max-w-sm lg:w-full lg:max-w-full bg-appTitleBgColor rounded-xl md:p-4 lg:p-6">
                         <div className='w-full'>
@@ -142,19 +150,26 @@ const page: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative hidden w-0 flex-1 lg:block p-16">
-                    <div className="relative  w-full h-full bg-appTitleBgColor rounded-tr-[450px] rounded-bl-[450px] shadow-2xl shadow-appTitleBgColor">
-                        <div className=" bg-white absolute w-full h-full rounded-tl-[450px] rounded-br-[450px] flex items-center kustify-center overflow-hidden shadow-2xl shadow-appTitleBgColor ">
-                            <Image
-                                src={logo}
-                                alt="Description of the image"
-                                width={100}
-                                height={100}
-                                className="bg-appWhite h-full w-full -rotate-45"
-                            />
+                <div className="relative hidden w-0 flex-1 lg:block p-16 md:flex items-center-justify-center ">
+                    <div className={`overflow-hidden expand animate-roundedTransition ${isPaused ? 'animation-paused' : ''
+                        }`}
+                        onMouseEnter={() => setIsPaused(true)}  // Pause animation on hover
+                        onMouseLeave={() => setIsPaused(false)} // Resume animation on mouse leave
+                    >
+                        <div className="relative w-full h-full bg-appTitleBgColor rounded-tr-[450px] rounded-bl-[450px] shadow-2xl shadow-appTitleBgColor">
+                            <div className="bg-white absolute w-full h-full rounded-tl-[450px] rounded-br-[450px] flex items-center justify-center overflow-hidden shadow-2xl shadow-appTitleBgColor">
+                                <Image
+                                    src={logo}
+                                    alt="Description of the image"
+                                    width={100}
+                                    height={100}
+                                    className="bg-appWhite h-full w-full -rotate-45"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>

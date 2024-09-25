@@ -14,6 +14,8 @@ import Image, { StaticImageData } from 'next/image';
 import bannerBacground from '../../public/images/banner2.png';
 import BannerStepForm from '../components/bannerform/BannerStepForm';
 import Header from '../components/Header';
+import background from '../../public/images/ship.png';
+
 
 const LandingPage = () => {
     return (
@@ -24,7 +26,11 @@ const LandingPage = () => {
                 <Header />
             </div> */}
 
-                <div className="w-full py-16 relative">
+                <div className="w-full py-16 relative" style={{
+                    backgroundImage: `url(${background.src})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}>
                     <LandingBanner />
                 </div>
 

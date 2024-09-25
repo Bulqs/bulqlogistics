@@ -6,6 +6,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
 import BannerStepForm2 from '../bannerform/BannerStepForm2';
+import logo from '../../../public/images/logo4.svg';
 
 const LandingBanner = () => {
 
@@ -59,7 +60,13 @@ const LandingBanner = () => {
 
 
   return (
-    <div className=''>
+    <div className=''
+      // style={{
+      //   backgroundImage: `url(${logo.src})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
+    >
       <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
         <h2 className='h2Banner'> Ship To Any Part Of The World With Peace Of Mind </h2>
       </div>
