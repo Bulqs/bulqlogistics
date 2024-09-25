@@ -2,7 +2,7 @@ import React from 'react'
 
 interface CardComponentHeadingProps {
     title: string;
-    description: string; // Support StaticImageData and string for flexibility
+    description?: string; // Support StaticImageData and string for flexibility
 }
 
 const CardComponentHeading: React.FC<CardComponentHeadingProps> = ({ title, description }) => {
