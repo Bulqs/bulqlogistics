@@ -57,7 +57,7 @@ const BannerStepForm3: React.FC = () => {
                         <div>
 
                             <WhoToWhoHeading
-                                text="From Another To Me"
+                                text="Drop Off"
                                 bgColor="bg-appWhite"
                                 textColor="text-appBlack"
                                 additionalClasses="rounded-lg"
@@ -65,7 +65,7 @@ const BannerStepForm3: React.FC = () => {
 
 
                             <WhoToWhoHeading2
-                                text="Send Package With Just A Button"
+                                text="Book a Drop Off"
                                 bgColor="bg-appTitleBgColor"
                                 textColor="text-appWhite"
                                 additionalClasses=" py-3 px-4"
@@ -76,7 +76,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 1 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         1
                                     </p>
-                                    <p className={`${currentStep === 1 ? ' flex bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'flex text-gray-500'}`} >Sender's Information</p>
+                                    <p className={`${currentStep === 1 ? ' flex bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'flex text-gray-500'}`} >My Details</p>
                                 </div>
                                 <div>
                                     <svg
@@ -94,7 +94,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 2 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         2
                                     </p>
-                                    <p className={`${currentStep === 2 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Receiver's Information </p>
+                                    <p className={`${currentStep === 2 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Delivery Hulb </p>
                                 </div>
                                 <div>
                                     <svg
@@ -143,7 +143,7 @@ const BannerStepForm3: React.FC = () => {
                                         <div className="xl:flex lg:flex md:flex flex-wrap justify-between">
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
                                                 <label htmlFor="FirstName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Sender's First Name
+                                                    First Name
                                                 </label>
 
                                                 <InputField
@@ -160,7 +160,7 @@ const BannerStepForm3: React.FC = () => {
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
                                                 <label htmlFor="LastName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Sender's Last Name
+                                                    Last Name
                                                 </label>
 
 
@@ -193,6 +193,21 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
+                                                <label htmlFor="Phonenumber" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                    Phone Number
+                                                </label>
+
+                                                <InputField
+                                                    id="phone"
+                                                    name="phone"
+                                                    value={formData.phone}  // Your state value
+                                                    placeholder="Enter your phone"
+                                                    required={true}
+                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                />
+                                            </div>
+
+                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
                                                 <label htmlFor="StreetAddress" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Street Address
                                                 </label>
@@ -208,7 +223,7 @@ const BannerStepForm3: React.FC = () => {
                                                 />
 
                                             </div>
-
+                                            
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
                                                 <label htmlFor="City" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Country
@@ -225,6 +240,7 @@ const BannerStepForm3: React.FC = () => {
                                                 </div>
                                             </div>
 
+                                            
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
                                                 <label htmlFor="Country" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     City
@@ -241,21 +257,6 @@ const BannerStepForm3: React.FC = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Phonenumber" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Phone Number
-                                                </label>
-
-                                                <InputField
-                                                    id="phone"
-                                                    name="phone"
-                                                    value={formData.phone}  // Your state value
-                                                    placeholder="Enter your phone"
-                                                    required={true}
-                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                />
-
-                                            </div>
 
                                         </div>
                                     </div>
