@@ -173,7 +173,7 @@ const Header: React.FC = () => {
                             <Link href="/signin" className="block px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">
                                 Login
                             </Link>
-                            <Link href="" className="block px-4 py-1 bg-appBlack text-appWhite font-semibold">
+                            <Link href="/signup" className="block px-4 py-1 bg-appBlack text-appWhite font-semibold">
                                 Sign Up
                             </Link>
                         </div>

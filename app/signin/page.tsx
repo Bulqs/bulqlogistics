@@ -1,16 +1,20 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image';
-import logo from '../../public/images/bulq.png';
+import logo from '../../public/images/logo4.svg';
 import Button from '../components/inputs/Button';
 import Link from 'next/link';
 import InputField from '../components/inputs/InputField';
+import { IoHome } from "react-icons/io5";
+import { FaUserPlus } from "react-icons/fa";
+import { RiLoginCircleFill } from "react-icons/ri";
 
-const page = () => {
+
+const page: React.FC = () => {
 
     const [formData, setFormData] = useState({
         email: '',
-       password: '',
+        password: '',
     });
 
 
@@ -24,13 +28,13 @@ const page = () => {
                                 <Image
                                     src={logo}
                                     alt="Description of the image"
-                                    width={100}
-                                    height={100}
+                                    width={300}
+                                    height={400}
                                     className="bg-appWhite"
                                 />
                             </div>
 
-                            <h2 className="flex mt-2 text-2xl font-bold leading-9 tracking-tight items-center justify-center w-full text-white ">
+                            <h2 className="flex mt-2 text-2xl font-bold mx-auto w-96 leading-9 tracking-tight items-center justify-center text-white bg-appNav/55 px-2 py-1 rounded-xl ">
                                 Login Your Shipping Account
                             </h2>
                             <p className="flex items-center justify-center font-semibold mt-2 text-sm leading-6 text-white">
@@ -45,13 +49,14 @@ const page = () => {
                         <div className="mt-6 w-full">
                             <div>
                                 <form action="#" method="POST" className="space-y-6">
-                                    <div className="flex flex-col bg-appNav/55 px-2 md:px-4 lg:px-8 py-8 gap-y-2 lg:gap-y-4 rounded-2xl">
+                                    <div className="flex flex-col bg-appNav/55 px-2 md:px-4 lg:px-8 py-4 gap-y-2 lg:gap-y-4 rounded-2xl">
                                         <div>
                                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
                                                 Email address
                                             </label>
                                             <div className="mt-2">
                                                 <InputField
+                                                    type="email"
                                                     id="email"
                                                     name="email"
                                                     value={formData.email}  // Your state value
@@ -69,6 +74,7 @@ const page = () => {
                                             </label>
                                             <div className="mt-2">
                                                 <InputField
+                                                    type="password"
                                                     id="password"
                                                     name="password"
                                                     value={formData.password}  // Your state value
@@ -102,14 +108,14 @@ const page = () => {
                                     </div>
 
                                     <div>
-                                        <Button type="submit" className='bg-appBanner/70 w-full'>
-                                            Account LogIn
+                                        <Button type="submit" className='bg-appNav/70 w-full gap-3 flex justify-center items-center'>
+                                            <RiLoginCircleFill className="text-2xl" /> <span className=""> Account LogIn </span>
                                         </Button>
                                     </div>
                                 </form>
                             </div>
 
-                            <div className="mt-10">
+                            <div className="mt-4">
                                 <div className="relative">
                                     <div aria-hidden="true" className="absolute inset-0 flex items-center">
                                         <div className="w-full border-t border-gray-200" />
@@ -119,13 +125,17 @@ const page = () => {
                                     </div>
                                 </div>
 
-                                <div className="mt-6 grid grid-cols-2 gap-4">
-                                    <Button type="submit" className='bg-appBanner/70'>
-                                        Create Account
+                                <div className="mt-3 grid grid-cols-2 gap-4">
+                                    <Button className='bg-appNav/70 flex gap-3 justify-center items-center'>
+                                        <Link href="/signup" className=" w-full flex justify-center items-center gap-3">
+                                            <FaUserPlus className="text-2xl" /> <span className="">  Create Account </span>
+                                        </Link>
                                     </Button>
 
-                                    <Button type="submit" className='bg-black'>
-                                        Back to Homepage
+                                    <Button className='bg-black flex gap-3 justify-center items-center'>
+                                        <Link href="/" className=" w-full flex justify-center items-center gap-3">
+                                            <IoHome className="text-2xl" /> <span className="">  Back to Homepage </span>
+                                        </Link>
                                     </Button>
                                 </div>
                             </div>
@@ -134,13 +144,13 @@ const page = () => {
                 </div>
                 <div className="relative hidden w-0 flex-1 lg:block p-16">
                     <div className="relative  w-full h-full bg-appTitleBgColor rounded-tr-[450px] rounded-bl-[450px] shadow-2xl shadow-appTitleBgColor">
-                        <div className=" absolute w-full h-full rounded-tl-[450px] rounded-br-[450px] flex items-center kustify-center overflow-hidden shadow-2xl shadow-appTitleBgColor ">
+                        <div className=" bg-white absolute w-full h-full rounded-tl-[450px] rounded-br-[450px] flex items-center kustify-center overflow-hidden shadow-2xl shadow-appTitleBgColor ">
                             <Image
                                 src={logo}
                                 alt="Description of the image"
                                 width={100}
                                 height={100}
-                                className="bg-appWhite h-full w-full object-cover"
+                                className="bg-appWhite h-full w-full -rotate-45"
                             />
                         </div>
                     </div>
@@ -148,7 +158,8 @@ const page = () => {
 
             </div>
         </div>
-    )
+    );
+
 }
 
 export default page
