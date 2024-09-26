@@ -230,7 +230,7 @@ const BannerStepForm3: React.FC = () => {
                                                 </label>
                                                 <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
                                                     <InputField
-                                                        id="city"
+                                                        id="country"
                                                         name="country"
                                                         value={formData.country}
                                                         placeholder="Select your country"
