@@ -145,13 +145,13 @@ const InputField: React.FC<InputFieldProps> = ({
                     value={value}
                     required={required}
                     onChange={onChange}
-                    className="bg-white w-full border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
+                    className="font-semibold bg-white w-full border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100 "
                 >
                     <option value="" disabled>
                         {placeholder}
                     </option>
                     {dropdownOptions.map((option, index) => (
-                        <option key={index} value={option}>
+                        <option className='font-semibold' key={index} value={option}>
                             {option}
                         </option>
                     ))}

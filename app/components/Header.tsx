@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/images/logo5.svg';
@@ -8,6 +8,13 @@ const Header: React.FC = () => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isShipmentOpen, setIsShipmentOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu toggle
+    const [rotate, setRotate] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false); // Example loggedIn state
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+
+
+
 
     const handleServicesClick = () => {
         setIsServicesOpen(!isServicesOpen);
@@ -22,6 +29,12 @@ const Header: React.FC = () => {
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+        setRotate(!rotate);
+    };
+  
 
     return (
         <nav className="bg-appNav shadow-md shadow-appTitleBgColor w-full pt-2  md:py-2 border-b-3 border-appTitleBgColor">
@@ -92,6 +105,9 @@ const Header: React.FC = () => {
                                 <li className="logisticsHeaderLi">
                                     <Link href="">Scheduling</Link>
                                 </li>
+                                <li className="logisticsHeaderLi">
+                                    <Link href="/location">Location</Link>
+                                </li>
                             </ul>
                         )}
                     </div>
@@ -100,19 +116,75 @@ const Header: React.FC = () => {
                         <p>Bulq Discount</p>
                     </Link>
 
-                    <Link href="/partner" className="logisticsHeaderp">
+                    <Link href="" className="logisticsHeaderp">
                         <p>Become a Partner</p>
                     </Link>
                 </div>
 
                 {/* Desktop Login/Register buttons */}
                 <div className="hidden md:flex space-x-4">
-                    <Link href="">
-                        <p className="px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">Login</p>
-                    </Link>
-                    <Link href="">
-                        <p className="px-4 py-1 bg-appBlack text-appWhite font-semibold">Sign Up</p>
-                    </Link>
+                
+                    {loggedIn ? (
+                        <div className="hidden sm:flex justify-end flex-row lg:pr-7 sm:pr-6 py-3 pr-4 pl-8 Drops relative">
+                            <div className="flex justify-center items-center flex-row">
+                                <img
+                                    className="w-10 h-10"
+                                    src="https://i.ibb.co/QMddNDb/Ellipse-14.png"
+                                    alt="individual person"
+                                />
+                                <div className="ml-2">
+                                    <p className="text-lg leading-4 font-semibold text-white">
+                                        <span>Welcome</span> David Hulk
+                                    </p>
+                                    <p className="font-normal text-xs leading-3 text-white mt-1">
+                                        david@alphahulk.com
+                                    </p>
+                                </div>
+                                <svg
+                                    onClick={toggleDropdown}
+                                    className={`${rotate ? 'rotate-180' : ''
+                                        } bg-white cursor-pointer transform duration-100 xl:ml-3 lg:ml-3 ml-2 p-1 rounded-full`}
+                                    width={20}
+                                    height={20}
+                                    viewBox="0 0 14 8"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M1 1L7 7L13 1"
+                                        stroke="#1F2937"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            {/* Dropdown Menu */}
+                            {dropdownOpen && (
+                                <div className="absolute right-6 mt-16 w-48 bg-white shadow-lg rounded-lg z-50">
+                                    <ul className="pt-2 bg-appTitleBgColor rounded-md">
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">My Dashboard</li>
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Settings</li>
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Tracking ID</li>
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Orders</li>
+                                        <hr className="border-t" />
+                                        <li className="bg-white text-center px-4 py-2 hover:bg-black hover:text-white cursor-pointer text-red-600 font-semibold">LOGOUT</li>
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <div className="flex items-center justify-center gap-4 account">
+                            <Link href="/signin">
+                                <p className="px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">Login</p>
+                            </Link>
+                            <Link href="/signup">
+                                <p className="px-4 py-1 bg-appBlack text-appWhite font-semibold">Sign Up</p>
+                            </Link>
+                        </div>
+                    )}
+                    
                 </div>
             </div>
 
@@ -131,13 +203,16 @@ const Header: React.FC = () => {
                         {isServicesOpen && (
                             <ul className='w-6/12 bg-appTitleBgColor text-white'>
                                 <li className="logisticsHeaderLi">
-                                    <Link href="/services/pickup">Pick up</Link>
+                                    <Link href="">Pick up</Link>
                                 </li>
                                 <li className="logisticsHeaderLi">
-                                    <Link href="/services/delivery">Delivery</Link>
+                                    <Link href="">Delivery</Link>
                                 </li>
                                 <li className="logisticsHeaderLi">
-                                    <Link href="/services/scheduling">Scheduling</Link>
+                                    <Link href="">Scheduling</Link>
+                                </li>
+                                <li className="logisticsHeaderLi">
+                                    <Link href="/location">Location</Link>
                                 </li>
                             </ul>
                         )}
@@ -157,7 +232,10 @@ const Header: React.FC = () => {
                                     <Link href=""> Delivery </Link>
                                 </li>
                                 <li className="logisticsHeaderLi">
-                                    <Link href="/services/scheduling">Scheduling</Link>
+                                    <Link href="">Scheduling</Link>
+                                </li>
+                                <li className="logisticsHeaderLi">
+                                    <Link href="/location">Location</Link>
                                 </li>
                             </ul>
                         )}
@@ -171,13 +249,13 @@ const Header: React.FC = () => {
 
                         <div className="flex w-6/12 items-center justify-between mt-4">
                             <Link href="/signin" className="block px-4 py-1 bg-appTitleBgColor text-appWhite font-semibold">
-                                Login
+                                Log In
                             </Link>
                             <Link href="/signup" className="block px-4 py-1 bg-appBlack text-appWhite font-semibold">
                                 Sign Up
                             </Link>
                         </div>
-                       
+
                     </div>
 
                 </div>
