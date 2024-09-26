@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/images/bulq.png';
+import logo from '../../public/images/logo5.svg';
 
 const Header: React.FC = () => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -32,9 +32,9 @@ const Header: React.FC = () => {
                         <Image
                             src={logo}
                             alt="Description of the image"
-                            width={50}
-                            height={50}
-                            className="bg-appWhite"
+                            width={200}
+                            height={200}
+                            className=""
                         />
                     </Link>
                 </div>

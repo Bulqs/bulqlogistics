@@ -17,6 +17,18 @@ const page: React.FC = () => {
     city: '',
   });
 
+
+  const workingHours = [
+    { day: "Monday", hours: "8am - 5pm" },
+    { day: "Tuesday", hours: "8am - 5pm" },
+    { day: "Wednesday", hours: "8am - 5pm" },
+    { day: "Thursday", hours: "8am - 5pm" },
+    { day: "Friday", hours: "8am - 5pm" },
+    { day: "Saturday", hours: "8am - 5pm" },
+  ];
+
+  const phoneNumbers = ["+234 807 8789 675", "+234 807 8789 675", "+234 807 8789 675"];
+
   return (
     <div className='w-full min-h-screen'>
       <InnerPageBanner
@@ -25,59 +37,106 @@ const page: React.FC = () => {
         backgroundImage={location}
       />
 
-      {/* Search input section goes here */}
-      <div className='w-full flex items-center justify-center px-8 py-8'>
+      <div className="flex flex-col mx-auto w-full py-12">
+        {/* Search input section goes here */}
+        <div className='w-full flex items-center justify-center px-8 py-8'>
 
-        <div className=' flex p-2 w-9/12 items-center justify-center gap-4'>
-          <InputField
-            id="country"
-            name="country"
-            value={formData.country}
-            placeholder="Select Your Country"
-            dropdownOptions={['USA', 'Canada', 'UK', 'Nigeria']}
-            onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-          />
+          <div className=' flex p-2 w-9/12 items-center justify-center gap-4'>
+            <InputField
+              id="country"
+              name="country"
+              value={formData.country}
+              placeholder="Select Your Country"
+              dropdownOptions={['USA', 'Canada', 'UK', 'Nigeria']}
+              onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+            />
 
-          <InputField
-            id="state"
-            name="state"
-            value={formData.state}
-            placeholder="Select Your State"
-            dropdownOptions={['Lagos State', 'Akwa-Ibom State', 'Abuja', 'Oyo State', 'Nasarawa State']}
-            onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-          />
+            <InputField
+              id="state"
+              name="state"
+              value={formData.state}
+              placeholder="Select Your State"
+              dropdownOptions={['Lagos State', 'Akwa-Ibom State', 'Abuja', 'Oyo State', 'Nasarawa State']}
+              onChange={(e) => setFormData({ ...formData, state: e.target.value })}
+            />
 
-          <InputField
-            id="city"
-            name="city"
-            value={formData.city}
-            placeholder="Select Your City"
-            dropdownOptions={['Ikorody', 'Abule Egba', 'Lekki']}
-            onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-          />
+            <InputField
+              id="city"
+              name="city"
+              value={formData.city}
+              placeholder="Select Your City"
+              dropdownOptions={['Ikorody', 'Abule Egba', 'Lekki']}
+              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+            />
+
+          </div>
+
+          <div className=' flex w-3/12 h-5 p-2 items-center gap-2 justify-end'>
+
+            <Button className='flex'>
+              SEARCH
+            </Button>
+
+            <Link href="/" className="text-white flex bg-green-900 p-2 rounded-md">
+              Show All Delivery Hub
+            </Link>
+
+          </div>
 
         </div>
+        {/* Search input section ends here */}
 
-        <div className=' flex w-3/12 h-5 p-2 items-center gap-2 justify-center'>
+        {/* Location Card Section Goes Here */}
+        <div className="flex flex-wrap gap-6 px-8 py-8 w-full">
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
 
-          <Button className='flex'>
-            SEARCH
-          </Button>
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
 
-          <Link href="/" className="text-white flex bg-green-900 p-2 rounded-md">
-            Show All Delivery Hub
-          </Link>
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
 
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
         </div>
-
+        {/* Location Card Section Ends Here */}
       </div>
-      {/* Search input section ends here */}
-
-      {/* Location Card Section Goes Here */}
-      <div className="flex items-center p-4 ">
-        <LocationCard />
-      </div>
-      {/* Location Card Section Ends Here */}
 
     </div>
   );
