@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-import logo from '../../public/images/bulq.png'
+import logo from '../../public/images/logo5.svg'
 import Link from 'next/link'
 
 
@@ -22,17 +22,14 @@ export const NewLetterSection: React.FC = () => {
                             <Image
                                 src={logo}
                                 alt="Description of the image"
-                                width={120} // The width of the displayed image
-                                height={120} // The height of the displayed image
+                                width={300} // The width of the displayed image
+                                height={300} // The height of the displayed image
                             />
-                        </div>
-                        <div className="sm:flex-shrink-0 flex items-center ">
-                            <h1 className='font-semibold'>BULQ</h1>
                         </div>
                     </div>
 
                     {/* News Letter Form Section Goes Here */}
-                    <div className="sm:flex lg:block block">
+                    <div className="flex flex-col">
                         <div className="sm:flex-shrink-0 mt-0 xl:mt-4 lg:mt-4">
                             <h3 className=" leading-6">NEW TO BULQ?</h3>
                             <p className="text-base leading-4 mt-2">Subscribe to our newsletter to get updates on our latest offers</p>
@@ -72,12 +69,12 @@ export const NewLetterSection: React.FC = () => {
 
                     {/* DOWNLOAD SECTION */}
                     <div className="sm:flex lg:block items-center justify-evenly pb-3 ">
-                        <div className="sm:flex-shrink-0 mr-1 flex items-center justify-center ">
+                        <div className="sm:flex-shrink-0 mr-1 gap-4 flex items-center justify-center ">
                             <Image
                                 src={logo}
                                 alt="Description of the image"
-                                width={80} // The width of the displayed image
-                                height={80} // The height of the displayed image
+                                width={200} // The width of the displayed image
+                                height={200} // The height of the displayed image
                             />
                             <div className="sm:flex-shrink-0 block mt-1 ">
                                 <h4 className=" leading-6">DOWNLOAD BULQ FREE APP</h4>

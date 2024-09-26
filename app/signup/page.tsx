@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
 import logo from '../../public/images/logo4.svg';
+import logo2 from '../../public/images/logo5.svg';
 import shipping from '../../public/images/shipping.jpg';
 import Button from '../components/inputs/Button';
 import Link from 'next/link';
@@ -54,11 +55,11 @@ const page: React.FC = () => {
                         <div className='w-full'>
                             <div className="flex items-center justify-center">
                                 <Image
-                                    src={logo}
+                                    src={logo2}
                                     alt="Description of the image"
                                     width={300}
                                     height={400}
-                                    className="bg-appWhite"
+                                    className=""
                                 />
                             </div>
 

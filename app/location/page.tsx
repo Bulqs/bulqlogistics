@@ -17,6 +17,18 @@ const page: React.FC = () => {
     city: '',
   });
 
+
+  const workingHours = [
+    { day: "Monday", hours: "8am - 5pm" },
+    { day: "Tuesday", hours: "8am - 5pm" },
+    { day: "Wednesday", hours: "8am - 5pm" },
+    { day: "Thursday", hours: "8am - 5pm" },
+    { day: "Friday", hours: "8am - 5pm" },
+    { day: "Saturday", hours: "8am - 5pm" },
+  ];
+
+  const phoneNumbers = ["+234 807 8789 675", "+234 807 8789 675", "+234 807 8789 675"];
+
   return (
     <div className='w-full min-h-screen'>
       <InnerPageBanner
@@ -25,7 +37,7 @@ const page: React.FC = () => {
         backgroundImage={location}
       />
 
-      <div className="container py-12">
+      <div className="flex flex-col mx-auto w-full py-12">
         {/* Search input section goes here */}
         <div className='w-full flex items-center justify-center px-8 py-8'>
 
@@ -75,10 +87,53 @@ const page: React.FC = () => {
         {/* Search input section ends here */}
 
         {/* Location Card Section Goes Here */}
-        <div className="flex items-center justify-between gap-6 px-8 py-8">
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
+        <div className="flex flex-wrap gap-6 px-8 py-8 w-full">
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
+
+          <LocationCard
+            title="Bulq Lagos"
+            location="Ikeja"
+            address="123 Ikeja Road, Lagos Island"
+            workingHours={workingHours}
+            phoneNumbers={phoneNumbers}
+          />
         </div>
         {/* Location Card Section Ends Here */}
       </div>
