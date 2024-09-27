@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     const [isShipmentOpen, setIsShipmentOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu toggle
     const [rotate, setRotate] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false); // Example loggedIn state
+    const [loggedIn, setLoggedIn] = useState(true); // Example loggedIn state
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
 
