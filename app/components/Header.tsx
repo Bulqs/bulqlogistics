@@ -164,8 +164,17 @@ const Header: React.FC = () => {
                             {dropdownOpen && (
                                 <div className="absolute right-6 mt-16 w-48 bg-white shadow-lg rounded-lg z-50">
                                     <ul className="pt-2 bg-appTitleBgColor rounded-md">
-                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">My Dashboard</li>
-                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Settings</li>
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">
+                                            <Link href="/pages/userdashboard">
+                                             My Dashboard
+                                            </Link>
+                                           
+                                        </li>
+                                        <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">
+                                            <Link href="/pages/userdashboard/settings">
+                                                Settings
+                                            </Link>
+                                        </li>
                                         <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Tracking ID</li>
                                         <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Orders</li>
                                         <hr className="border-t" />
