@@ -4,7 +4,7 @@ import Image from 'next/image';
 interface InnerPageBannerProps {
     heading: string;
     text: string;
-    backgroundImage: StaticImageData; // For locally imported images, we use StaticImageData type
+    backgroundImage: string; // For locally imported images, we use StaticImageData type
 }
 
 const InnerPageBanner: React.FC<InnerPageBannerProps> = ({ heading, text, backgroundImage }) => {

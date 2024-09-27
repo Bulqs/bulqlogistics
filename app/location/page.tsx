@@ -32,8 +32,8 @@ const page: React.FC = () => {
   return (
     <div className='w-full min-h-screen'>
       <InnerPageBanner
-        heading="Tracking Orders Page"
-        text="Track Your Orders In Seconds"
+        heading="All Offices Address"
+        text="Contact us in a second"
         backgroundImage={location}
       />
 
