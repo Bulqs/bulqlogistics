@@ -16,7 +16,9 @@ import Link from 'next/link';
 const DashboardHome = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenFilter, setIsOpenFilter] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string>("Month");
+    const [selectedValueFilter, setSelectedValueFilter] = useState<string>("Month");
 
     const data = [
         { month: 'Jan', values: { green: 200, yellow: 300, red: 500 } },
@@ -32,14 +34,23 @@ const DashboardHome = () => {
         { month: 'Nov', values: { green: 200, yellow: 400, red: 400 } },
         { month: 'Dec', values: { green: 300, yellow: 300, red: 400 } },
     ];
-    
+
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
+    };
+
+    const toggleDropdownFilter = () => {
+        setIsOpenFilter(!isOpenFilter);
     };
 
     const handleSelect = (value: string) => {
         setSelectedValue(value);
         setIsOpen(false); // Close the dropdown after selection
+    };
+
+    const handleFilter = (value: string) => {
+        setSelectedValueFilter(value);
+        setIsOpenFilter(false); // Close the dropdown after selection
     };
 
     return (
@@ -136,29 +147,29 @@ const DashboardHome = () => {
             {/* Chart Section Goes here */}
             <div className='flex flex-col items-center justify-between mt-12 w-full shadow-lg shadow-appTitleBgColor '>
                 {/* Chat Stistics Heading Goes Here*/}
-                <div className="flex flex-row w-full items-center justify-between px-2 bg-black">
-                    <div className="flex items-center justify-start pt-0 p-2 font-bold">
-                        <p className='text-white'>Shipping Statistics</p>
+                <div className="flex flex-row w-full items-center justify-between px-2 py-1 bg-black">
+                    <div className="flex items-center justify-start px-2 font-bold">
+                        <p className='text-white'>SHIPPING STATISTICS</p>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-between pt-0 p-2 gap-3 mt-4">
+                    <div className="flex flex-wrap items-center justify-between pt-0 p-2 gap-3 mt-2">
 
                         <div className="flex flex-wrap p-1 items-center justify-center gap-1 bg-orange-500 px-2 rounded-lg">
                             <FaCircle className='text-orange-400' /> <p className="font-semibold"> In Delivery</p>
                         </div>
-                        
+
                         <div className="flex flex-wrap p-1 items-center justify-center gap-1 bg-green-500 px-2 rounded-lg">
                             <FaCircle className='text-green-400' /> <p className="font-semibold"> In Delivery</p>
                         </div>
-                        
+
                         <div className="flex flex-wrap p-1 items-center justify-center gap-1 bg-red-700 px-2 rounded-lg">
                             <FaCircle className='text-red-500' /> <p className="font-semibold"> In Delivery</p>
                         </div>
 
-                        <div className="flex flex-wrap p-0 items-center justify-center gap-1 bg-red-700 px-0 rounded-lg">
+                        <div className="flex relative flex-wrap p-0 items-center justify-center gap-1 bg-red-700 px-0 rounded-lg">
                             <button
                                 onClick={toggleDropdown}
-                                className="inline-flex justify-center w-28 px-2 py-1 bg-appTitleBgColor text-white font-medium rounded-md"
+                                className="inline-flex justify-between w-28 px-2 py-1 bg-appTitleBgColor text-white font-medium rounded-md"
                             >
                                 <p className="value">{selectedValue}</p> {/* Show the selected value here */}
                                 <svg
@@ -177,23 +188,23 @@ const DashboardHome = () => {
 
                             {/* Dropdown Menu */}
                             {isOpen && (
-                                <div className="absolute right-8 mt-40 w-28 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                                <div className="absolute right-0 mt-40 w-28 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
                                     <div className="py-0 bg-appTitleBgColor  rounded-lg overflow-hidden border-2 border-appNav shadow-lg shadow-appNav">
                                         <button
                                             onClick={() => handleSelect("Day")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-semibold"
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
                                         >
                                             Day
                                         </button>
                                         <button
                                             onClick={() => handleSelect("Month")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-semibold"
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
                                         >
                                             Month
                                         </button>
                                         <button
                                             onClick={() => handleSelect("Year")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-semibold"
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
                                         >
                                             Year
                                         </button>
@@ -205,8 +216,8 @@ const DashboardHome = () => {
                 </div>
                 {/* Chat Stistics Heading Goes Here*/}
 
-                
-                
+
+
                 <div className="flex flex-row w-full items-center justify-between px-2 mt-12">
                     {/* Left Y-axis Labels */}
                     <div className="flex flex-col justify-between h-64 pr-4">
@@ -245,6 +256,103 @@ const DashboardHome = () => {
             </div>
             {/* Chart Section Ends Here */}
 
+            {/* Order List Sectioin Goes Here */}
+            <div className='flex flex-col items-center justify-between mt-12 w-full shadow-lg shadow-appTitleBgColor '>
+                {/* Chat Stistics Heading Goes Here*/}
+                <div className="flex flex-row w-full items-center justify-between px-2 py-1 bg-black">
+                    <div className="flex items-center justify-start px-2 font-bold w-full">
+                        <p className='text-white'>ORDER LIST</p>
+                    </div>
+
+                    <div className="flex items-center justify-end pt-0 p-2 gap-3 mt-2 w-full">
+
+                        <div className="flex relative flex-wrap p-0 items-center justify-center gap-10 px-0 rounded-lg">
+                            <button
+                                onClick={toggleDropdownFilter}
+                                className="inline-flex justify-between w-44 px-2 py-1 bg-appTitleBgColor text-white font-medium rounded-md"
+                            >
+                                <p className="value">{selectedValueFilter}</p> {/* Show the selected value here */}
+                                <svg
+                                    className="mt-[3px] ml-2 -mr-1 h-5 w-5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L13 10.414V16a1 1 0 01-.553.894l-4 2A1 1 0 017 18v-7.586L3.293 5.707A1 1 0 013 5V3z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {isOpenFilter && (
+                                <div className="absolute right-0 mt-64 w-44 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                                    <div className="py-0 bg-appTitleBgColor  rounded-lg overflow-hidden border-2 border-appNav shadow-lg shadow-appNav">
+                                        <button
+                                            onClick={() => handleFilter("Filter By Date")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By Date
+                                        </button>
+                                        <button
+                                            onClick={() => handleFilter("Filter By Id")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By Id
+                                        </button>
+                                        <button
+                                            onClick={() => handleFilter("Filter By Location")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By Location
+                                        </button>
+                                        <button
+                                            onClick={() => handleFilter("Filter By State")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By State
+                                        </button>
+                                        <button
+                                            onClick={() => handleFilter("Filter By Country")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By Country
+                                        </button>
+                                         <button
+                                            onClick={() => handleFilter("Filter By City")}
+                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
+                                        >
+                                            Filter By City
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="sm:w-64  bg-white border rounded border-gray-700 flex items-center">
+                            <input className="mx-2 focus:outline-none w-full py-2 text-sm leading-none placeholder-gray-600 text-gray-600" placeholder="Search here" />
+                            <svg className="mr-2" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.66667 11.3333C9.244 11.3333 11.3333 9.244 11.3333 6.66667C11.3333 4.08934 9.244 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.244 4.08934 11.3333 6.66667 11.3333Z" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M14 14L10 10" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
+
+
+                    </div>
+                </div>
+                {/* Chat Stistics Heading Goes Here*/}
+
+
+
+                <div className="flex flex-row w-full items-center justify-between px-2 mt-12">
+                   
+                    {/* LIST DESIGN GOES HERE */}
+                    
+                </div>
+            </div>
+            {/* Order List Section Ends Here */}
         </UserDashboardLayout>
     );
 };

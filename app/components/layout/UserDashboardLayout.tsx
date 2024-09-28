@@ -142,13 +142,14 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
                         </div>
                     </div>
 
-                    <div className="flex items-end justify-end w-full  pr-8">
+                    <div className="flex items-end justify-end w-full  pr-4">
                         <div className="relative">
                             <button
                                 aria-label="show notifications"
-                                className="cursor-pointer w-6 h-6 xl:w-auto xl:h-auto text-black"
+                                className="cursor-pointer items-center justify-between gap-x-4 flex w-20 h-6 xl:w-auto xl:h-auto text-black "
                                 onClick={toggleDropdown}
                             >
+                                <p className="font-semibold">Notifications</p>
                                 <svg
                                     width={18}
                                     height={20}
@@ -210,7 +211,7 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
 
                                             {/* Nested Items */}
                                             {openItems === item.id && item.nestedItems.map((nestedItem) => (
-                                                <li key={nestedItem.id} className="bg-white rounded-b-lg text-appTitleBgColor px-4 py-2">
+                                                <li key={nestedItem.id} className="bg-white text-appTitleBgColor px-4 py-2">
                                                     <div className="w-full flex-col rounded-md overflow-hidden">
                                                         <div className="w-full flex items-center justify-between bg-appTitleBgColor px-2 py-1">
                                                             <p className='text-sm font-semibold text-white'>{nestedItem.label}</p>
@@ -229,8 +230,8 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
                                             ))}
                                         </div>
                                     ))}
-                                    <div className="flex w-full bg-white items-center justify-center gap-2 pointer-cusor rounded-b-md">
-                                        <MdCancel className="text-red-900" /> <h5 className='text-black text-lg'> Close </h5>
+                                    <div className="flex w-full bg-white items-center justify-center gap-2 pointer-cusor rounded-b-md border-t-2 border-gray-700">
+                                        <MdCancel className="text-red-900" /> <h5 className='text-black text-md'> Close </h5>
                                     </div>
                                 </ul>
                                 
