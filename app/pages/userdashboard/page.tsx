@@ -177,7 +177,7 @@ const DashboardHome = () => {
 
                             {/* Dropdown Menu */}
                             {isOpen && (
-                                <div className="absolute right-8 mt-40 w-32 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                                <div className="absolute right-8 mt-40 w-28 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
                                     <div className="py-0 bg-appTitleBgColor  rounded-lg overflow-hidden border-2 border-appNav shadow-lg shadow-appNav">
                                         <button
                                             onClick={() => handleSelect("Day")}

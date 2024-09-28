@@ -4,9 +4,10 @@ import { ReactNode, useState } from 'react';
 import { usePathname } from 'next/navigation'; // Use next/navigation
 import Link from 'next/link';
 import { FaCircle } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Image from 'next/image';
 import gmail from '../../../public/images/gmail.png'
+import { MdCancel } from "react-icons/md";
 
 interface UserDashboardLayoutProps {
     children: ReactNode;
@@ -16,10 +17,94 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
     const pathname = usePathname(); // Replaces router.pathname
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    
+    const [openItems, setOpenItems] = useState<number | null>(null); // Track which item is open
+
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
+
+    const toggleNested = (index: number) => {
+        setOpenItems(openItems === index ? null : index);
+    };
+
+    const menuItems = [
+        {
+            id: 1,
+            title: 'Email Verification ',
+            icon: gmail,
+            nestedItems: [
+                {
+                    id: 1,
+                    label: 'Email Verification',
+                    href: '#',
+                    moment: '20-12-2024',
+                    text: 'Dear Bulqer 001 your email hasn&ansbt been verifield yet ensure you verify to enjoy the full package',
+                    read: 'Read'
+                }
+            ],
+
+        },
+        {
+            id: 2,
+            title: 'In Transit',
+            icon: gmail,
+            nestedItems: [
+                {
+                    id: 2,
+                    label: 'Email Verification',
+                    href: '#',
+                    moment: '20-12-2024',
+                    text: 'Dear Bulqer 001 your email hasn&ansbt been verifield yet ensure you verify to enjoy the full package',
+                    read: 'Read'
+                }
+            ],
+        },
+        {
+            id: 3,
+            title: 'In Delivery',
+            icon: gmail,
+            nestedItems: [
+                {
+                    id: 3,
+                    label: 'Email Verification',
+                    href: '#',
+                    moment: '20-12-2024',
+                    text: 'Dear Bulqer 001 your email hasn&ansbt been verifield yet ensure you verify to enjoy the full package',
+                    read: 'Read'
+                }
+            ],
+        },
+        {
+            id: 4,
+            title: 'Personal Info',
+            icon: gmail,
+            nestedItems: [
+                {
+                    id: 4,
+                    label: 'Nested Item 2',
+                    href: '#',
+                    moment: '20-12-2024',
+                    text: 'Dear Bulqer 001 your email hasn&ansbt been verifield yet ensure you verify to enjoy the full package',
+                    read: 'Read'
+                }
+            ],
+        },
+        {
+            id: 5,
+            title: 'Delivery Id',
+            icon: gmail,
+            nestedItems: [
+                {
+                    id: 5,
+                    label: 'Nested Item 2',
+                    href: '#',
+                    moment: '20-12-2024',
+                    text: 'Dear Bulqer 001 your email hasn&ansbt been verifield yet ensure you verify to enjoy the full package',
+                    read: 'Read'
+                }
+            ],
+        },
+    ];
 
     return (
         <div className="flex h-screen">
@@ -28,7 +113,7 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
                 <div className="text-2xl font-semibold mb-6 ">Dashboard</div>
                 <nav className="flex flex-col space-y-4">
                     <Link href="/pages/userdashboard" className={`px-3 py-2 rounded-md ${pathname === '/pagesuserdashboard' ? 'bg-gray-700' : 'hover:bg-gray-700'}`}>
-                       Home
+                        Home
                     </Link>
                     <Link href="/pages/userdashboard/profile" className={`px-3 py-2 rounded-md ${pathname === '/pages/userdashboard/profile' ? 'bg-gray-700' : 'hover:bg-gray-700'}`}>
                         Profile
@@ -56,13 +141,11 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
                             </svg>
                         </div>
                     </div>
-                    
+
                     <div className="flex items-end justify-end w-full  pr-8">
                         <div className="relative">
-                            <a
+                            <button
                                 aria-label="show notifications"
-                                role="link"
-                                href="javascript:void(0)"
                                 className="cursor-pointer w-6 h-6 xl:w-auto xl:h-auto text-black"
                                 onClick={toggleDropdown}
                             >
@@ -86,42 +169,73 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                            </a>
+                            </button>
 
                             {/* Notification Indicator */}
                             <div className="animate-ping w-1.5 h-1.5 bg-red-700 rounded-full absolute inset-0 mt-0.5 mr-0.5 m-auto" />
                             <div className="w-1.5 h-1.5 bg-red-700 rounded-full absolute inset-0 mt-0.5 mr-0.5 m-auto" />
 
                             {/* Dropdown Menu */}
-                            {isDropdownOpen && (
-                                <div className="absolute right-0 mt-2 w-60 border text-white border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
-                                    <ul className="py-0 bg-appTitleBgColor text-white">
-                                        <li className="flex items-center justify-between  hover:text-appTitleBgColor text-white hover:bg-white px-2">
-                                            <div className='flex items-center justify-center'>
-                                                <Image
-                                                    src={gmail}  // Path to the image in the public folder
-                                                    alt="Example Image"         // Alt text for the image
-                                                    width={30}                 // Desired width
-                                                    height={30}                // Desired height
-                                                />
-                                            </div>
-                                            <Link
-                                                href="#"
-                                                className="block font-bold px-4 py-2 text-sm"
+
+                            <div className={`${isDropdownOpen ? 'block' : 'hidden'} absolute right-0 mt-2 w-64 border text-white border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden`}>
+                                <ul className="py-0 bg-appTitleBgColor text-white border-2 border-appTitleBgColor">
+                                    {menuItems.map((item) => (
+                                        <div key={item.id}>
+                                            {/* Main List Item */}
+                                            <li
+                                                className="flex items-center justify-between hover:text-appTitleBgColor text-white hover:bg-white px-2 cursor-pointer rounded-t-md"
+                                                onClick={() => toggleNested(item.id)}
                                             >
-                                                Email Verification
-                                            </Link>
+                                                <div className="flex items-center justify-center">
+                                                    <Image
+                                                        src={item.icon}
+                                                        alt={item.title}
+                                                        width={30}
+                                                        height={30}
+                                                    />
+                                                </div>
 
-                                            <div className='flex items-center justify-between gap-2'>
-                                                <FaCircle />
-                                                <IoIosArrowDown />
-                                            </div>
-                                        </li>
+                                                <div className="flex w-full items-start px-4 py-2">
+                                                    <Link href="#" className="font-bold text-sm ">
+                                                        {item.title}
+                                                    </Link>
+                                                </div>
 
-                                        
-                                    </ul>
-                                </div>
-                            )}
+                                                <div className="flex items-center justify-between gap-2">
+                                                    <FaCircle className='text-red-800' />
+                                                    {openItems === item.id ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                                </div>
+
+                                            </li>
+
+                                            {/* Nested Items */}
+                                            {openItems === item.id && item.nestedItems.map((nestedItem) => (
+                                                <li key={nestedItem.id} className="bg-white rounded-b-lg text-appTitleBgColor px-4 py-2">
+                                                    <div className="w-full flex-col rounded-md overflow-hidden">
+                                                        <div className="w-full flex items-center justify-between bg-appTitleBgColor px-2 py-1">
+                                                            <p className='text-sm font-semibold text-white'>{nestedItem.label}</p>
+                                                            <p className='text-xs font-medium text-white'> {nestedItem.moment} </p>
+                                                        </div>
+
+                                                        <div className="w-full flex items-start text-justify bg-white mt-2 px-2 py-1">
+                                                            <p className='text-xs font-medium text-black'> {nestedItem.text} </p>
+                                                        </div>
+
+                                                        <div className="w-full flex items-center justify-center mt-2 bg-appTitleBgColor ">
+                                                            <Link href={nestedItem.href} className=" w-full flex items-center justify-center text-sm font- text-white bg-green-700 px-4 py-1"> read </Link>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </div>
+                                    ))}
+                                    <div className="flex w-full bg-white items-center justify-center gap-2 pointer-cusor rounded-b-md">
+                                        <MdCancel className="text-red-900" /> <h5 className='text-black text-lg'> Close </h5>
+                                    </div>
+                                </ul>
+                                
+                            </div>
+
                         </div>
                     </div>
 
