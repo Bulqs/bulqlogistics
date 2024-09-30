@@ -13,9 +13,6 @@ const Header: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
 
-
-
-
     const handleServicesClick = () => {
         setIsServicesOpen(!isServicesOpen);
         setIsShipmentOpen(false);
