@@ -13,27 +13,73 @@ import Link from 'next/link';
 
 
 
-const DashboardHome = () => {
+const data = [
+    { month: 'Jan', values: { green: 200, yellow: 300, red: 500 } },
+    { month: 'Feb', values: { green: 150, yellow: 350, red: 450 } },
+    { month: 'Mar', values: { green: 300, yellow: 300, red: 400 } },
+    { month: 'Apr', values: { green: 100, yellow: 250, red: 650 } },
+    { month: 'May', values: { green: 250, yellow: 200, red: 550 } },
+    { month: 'Jun', values: { green: 200, yellow: 300, red: 400 } },
+    { month: 'Jul', values: { green: 100, yellow: 400, red: 500 } },
+    { month: 'Aug', values: { green: 300, yellow: 200, red: 600 } },
+    { month: 'Sep', values: { green: 200, yellow: 300, red: 500 } },
+    { month: 'Oct', values: { green: 250, yellow: 250, red: 500 } },
+    { month: 'Nov', values: { green: 200, yellow: 400, red: 400 } },
+    { month: 'Dec', values: { green: 300, yellow: 300, red: 400 } },
+];
+
+
+interface Order {
+    orderId: string;
+    dateLoaded: string;
+    status: string;
+    pickUpLocation: string;
+    dropOffLocation: string;
+}
+
+interface Item {
+    sn: number;
+    itemName: string;
+    category: string;
+    fragile: boolean;
+    quantity: number;
+    weight: string;
+    shippingType: string;
+}
+
+const orders: Order[] = [
+    {
+        orderId: "#ORD001",
+        dateLoaded: "2024-09-28",
+        status: "In Progress",
+        pickUpLocation: "New York",
+        dropOffLocation: "Los Angeles",
+    },
+    {
+        orderId: "#ORD002",
+        dateLoaded: "2024-09-27",
+        status: "Completed",
+        pickUpLocation: "Chicago",
+        dropOffLocation: "Houston",
+    },
+    // Add more orders as needed
+];
+
+const items: Item[] = [
+    { sn: 1, itemName: "Laptop", category: "Electronics", fragile: true, quantity: 1, weight: "1.5kg", shippingType: "Air" },
+    { sn: 2, itemName: "Books", category: "Education", fragile: false, quantity: 3, weight: "2kg", shippingType: "Ground" },
+    // Add more items as needed
+];
+
+const DashboardHome: React.FC = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenFilter, setIsOpenFilter] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string>("Month");
     const [selectedValueFilter, setSelectedValueFilter] = useState<string>("Month");
+    const [dropdownStatus, setDropdownStatus] = useState(0);
+    const [openDropdownsTable, setOpenDropdownsTable] = useState<Record<string, boolean>>({});
 
-    const data = [
-        { month: 'Jan', values: { green: 200, yellow: 300, red: 500 } },
-        { month: 'Feb', values: { green: 150, yellow: 350, red: 450 } },
-        { month: 'Mar', values: { green: 300, yellow: 300, red: 400 } },
-        { month: 'Apr', values: { green: 100, yellow: 250, red: 650 } },
-        { month: 'May', values: { green: 250, yellow: 200, red: 550 } },
-        { month: 'Jun', values: { green: 200, yellow: 300, red: 400 } },
-        { month: 'Jul', values: { green: 100, yellow: 400, red: 500 } },
-        { month: 'Aug', values: { green: 300, yellow: 200, red: 600 } },
-        { month: 'Sep', values: { green: 200, yellow: 300, red: 500 } },
-        { month: 'Oct', values: { green: 250, yellow: 250, red: 500 } },
-        { month: 'Nov', values: { green: 200, yellow: 400, red: 400 } },
-        { month: 'Dec', values: { green: 300, yellow: 300, red: 400 } },
-    ];
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -51,6 +97,14 @@ const DashboardHome = () => {
     const handleFilter = (value: string) => {
         setSelectedValueFilter(value);
         setIsOpenFilter(false); // Close the dropdown after selection
+    };
+
+
+    const toggleDropdownSecondTable = (orderId: string) => {
+        setOpenDropdownsTable((prevState) => ({
+            ...prevState,
+            [orderId]: !prevState[orderId],
+        }));
     };
 
     return (
@@ -320,7 +374,7 @@ const DashboardHome = () => {
                                         >
                                             Filter By Country
                                         </button>
-                                         <button
+                                        <button
                                             onClick={() => handleFilter("Filter By City")}
                                             className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
                                         >
@@ -341,16 +395,91 @@ const DashboardHome = () => {
 
 
                     </div>
+
                 </div>
                 {/* Chat Stistics Heading Goes Here*/}
 
+                <div className="flex w-full items-center justify-between px-2 pb-2 mt-6">
+                    <div className="overflow-x-auto w-full">
+                        <table className="min-w-full table-auto border-collapse border border-gray-200">
+                            <thead>
+                                <tr className="bg-appTitleBgColor text-center text-white text-base">
+                                    <th className="border p-2">
+                                        <input type="checkbox" />
+                                    </th>
+                                    <th className="border p-2">Order ID</th>
+                                    <th className="border p-2">Date Loaded</th>
+                                    <th className="border p-2">Status</th>
+                                    <th className="border p-2">Pick Up Location</th>
+                                    <th className="border p-2">Drop Off Location</th>
+                                    <th className="border p-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {orders.map((order) => (
+                                    <>
+                                        <tr key={order.orderId} className="text-center bg-appBanner/80 font-semibold text-base">
+                                            <th className="border p-2">
+                                                <input type="checkbox" />
+                                            </th>
+                                            <td className="border p-2">{order.orderId}</td>
+                                            <td className="border p-2">{order.dateLoaded}</td>
+                                            <td className="border p-2"> <span className="bg-green-800 px-3 py-1 rounded-lg text-white"> {order.status} </span></td>
+                                            <td className="border p-2">{order.pickUpLocation}</td>
+                                            <td className="border p-2">{order.dropOffLocation}</td>
+                                            <td className="border p-2">
+                                                <p
+                                                    className="Haction cursor-pointer text-white bg-appTitleBgColor py-1 rounded-lg"
+                                                    onClick={() => toggleDropdownSecondTable(order.orderId)}
+                                                >
+                                                    {openDropdownsTable[order.orderId] ? "Hide Details" : "View Details"}
+                                                </p>
+                                            </td>
+                                        </tr>
 
-
-                <div className="flex flex-row w-full items-center justify-between px-2 mt-12">
-                   
-                    {/* LIST DESIGN GOES HERE */}
-                    
+                                        {/* This is the row that will toggle on clicking */}
+                                        {openDropdownsTable[order.orderId] && (
+                                            <tr className="w-full">
+                                                <td colSpan={6} className="">
+                                                    <div className="bg-gray-50 shadow-md rounded mt-2 mb-4 mx-auto">
+                                                        <table className="min-w-full table-auto border-collapse border border-gray-200">
+                                                            <thead>
+                                                                <tr className="bg-appNav text-center">
+                                                                    <th className="border p-2">SN</th>
+                                                                    <th className="border p-2">ITEM NAME</th>
+                                                                    <th className="border p-2">CATEGORY</th>
+                                                                    <th className="border p-2">FRAGILE</th>
+                                                                    <th className="border p-2">QUANTITY</th>
+                                                                    <th className="border p-2">WEIGHT</th>
+                                                                    <th className="border p-2">SHIPPING TYPE</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {items?.map((item) => (
+                                                                    <tr key={item.sn} className="text-center bg-appBanner/95 text-white">
+                                                                        <td className="border p-2">{item.sn}</td>
+                                                                        <td className="border p-2">{item.itemName}</td>
+                                                                        <td className="border p-2">{item.category}</td>
+                                                                        <td className="border p-2">{item.fragile ? "Yes" : "No"}</td>
+                                                                        <td className="border p-2">{item.quantity}</td>
+                                                                        <td className="border p-2">{item.weight}</td>
+                                                                        <td className="border p-2">{item.shippingType}</td>
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
+
             </div>
             {/* Order List Section Ends Here */}
         </UserDashboardLayout>
