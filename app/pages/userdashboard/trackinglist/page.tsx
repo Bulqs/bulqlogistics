@@ -1,4 +1,4 @@
-import UserDashboardLayout from '@/app/components/layout/UserDashboardLayout';
+import UserDashboardLayout from '@/app/components/userdashboardlayout/layout/UserDashboardLayout';
 import React from 'react';
 
 const page = () => {

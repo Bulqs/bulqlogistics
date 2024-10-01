@@ -1,6 +1,6 @@
 // pages/dashboard/index.tsx
 "use client"
-import UserDashboardLayout from '../../components/layout/UserDashboardLayout';
+import UserDashboardLayout from '../../components/userdashboardlayout/layout/UserDashboardLayout';
 import { BsBoxFill } from "react-icons/bs";
 import { MdOutlineDirectionsBike } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -10,6 +10,7 @@ import { FaCircle } from "react-icons/fa";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { useState } from 'react';
 import Link from 'next/link';
+import UserOrder from './orderlist/UserOrder';
 
 
 
@@ -29,47 +30,7 @@ const data = [
 ];
 
 
-interface Order {
-    orderId: string;
-    dateLoaded: string;
-    status: string;
-    pickUpLocation: string;
-    dropOffLocation: string;
-}
 
-interface Item {
-    sn: number;
-    itemName: string;
-    category: string;
-    fragile: boolean;
-    quantity: number;
-    weight: string;
-    shippingType: string;
-}
-
-const orders: Order[] = [
-    {
-        orderId: "#ORD001",
-        dateLoaded: "2024-09-28",
-        status: "In Progress",
-        pickUpLocation: "New York",
-        dropOffLocation: "Los Angeles",
-    },
-    {
-        orderId: "#ORD002",
-        dateLoaded: "2024-09-27",
-        status: "Completed",
-        pickUpLocation: "Chicago",
-        dropOffLocation: "Houston",
-    },
-    // Add more orders as needed
-];
-
-const items: Item[] = [
-    { sn: 1, itemName: "Laptop", category: "Electronics", fragile: true, quantity: 1, weight: "1.5kg", shippingType: "Air" },
-    { sn: 2, itemName: "Books", category: "Education", fragile: false, quantity: 3, weight: "2kg", shippingType: "Ground" },
-    // Add more items as needed
-];
 
 const DashboardHome: React.FC = () => {
 
@@ -213,11 +174,11 @@ const DashboardHome: React.FC = () => {
                         </div>
 
                         <div className="flex flex-wrap p-1 items-center justify-center gap-1 bg-green-500 px-2 rounded-lg">
-                            <FaCircle className='text-green-400' /> <p className="font-semibold"> In Delivery</p>
+                            <FaCircle className='text-green-400' /> <p className="font-semibold"> Completed</p>
                         </div>
 
                         <div className="flex flex-wrap p-1 items-center justify-center gap-1 bg-red-700 px-2 rounded-lg">
-                            <FaCircle className='text-red-500' /> <p className="font-semibold"> In Delivery</p>
+                            <FaCircle className='text-red-500' /> <p className="font-semibold"> Rejected </p>
                         </div>
 
                         <div className="flex relative flex-wrap p-0 items-center justify-center gap-1 bg-red-700 px-0 rounded-lg">
@@ -311,175 +272,8 @@ const DashboardHome: React.FC = () => {
             {/* Chart Section Ends Here */}
 
             {/* Order List Sectioin Goes Here */}
-            <div className='flex flex-col items-center justify-between mt-12 w-full shadow-lg shadow-appTitleBgColor '>
-                {/* Chat Stistics Heading Goes Here*/}
-                <div className="flex flex-row w-full items-center justify-between px-2 py-1 bg-black">
-                    <div className="flex items-center justify-start px-2 font-bold w-full">
-                        <p className='text-white'>ORDER LIST</p>
-                    </div>
-
-                    <div className="flex items-center justify-end pt-0 p-2 gap-3 mt-2 w-full">
-
-                        <div className="flex relative flex-wrap p-0 items-center justify-center gap-10 px-0 rounded-lg">
-                            <button
-                                onClick={toggleDropdownFilter}
-                                className="inline-flex justify-between w-44 px-2 py-1 bg-appTitleBgColor text-white font-medium rounded-md"
-                            >
-                                <p className="value">{selectedValueFilter}</p> {/* Show the selected value here */}
-                                <svg
-                                    className="mt-[3px] ml-2 -mr-1 h-5 w-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L13 10.414V16a1 1 0 01-.553.894l-4 2A1 1 0 017 18v-7.586L3.293 5.707A1 1 0 013 5V3z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </button>
-
-                            {/* Dropdown Menu */}
-                            {isOpenFilter && (
-                                <div className="absolute right-0 mt-64 w-44 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
-                                    <div className="py-0 bg-appTitleBgColor  rounded-lg overflow-hidden border-2 border-appNav shadow-lg shadow-appNav">
-                                        <button
-                                            onClick={() => handleFilter("Filter By Date")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By Date
-                                        </button>
-                                        <button
-                                            onClick={() => handleFilter("Filter By Id")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By Id
-                                        </button>
-                                        <button
-                                            onClick={() => handleFilter("Filter By Location")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By Location
-                                        </button>
-                                        <button
-                                            onClick={() => handleFilter("Filter By State")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By State
-                                        </button>
-                                        <button
-                                            onClick={() => handleFilter("Filter By Country")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By Country
-                                        </button>
-                                        <button
-                                            onClick={() => handleFilter("Filter By City")}
-                                            className="block w-full px-4 py-2 text-sm text-white hover:text-appTitleBgColor hover:bg-gray-100 font-medium"
-                                        >
-                                            Filter By City
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="sm:w-64  bg-white border rounded border-gray-700 flex items-center">
-                            <input className="mx-2 focus:outline-none w-full py-2 text-sm leading-none placeholder-gray-600 text-gray-600" placeholder="Search here" />
-                            <svg className="mr-2" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.66667 11.3333C9.244 11.3333 11.3333 9.244 11.3333 6.66667C11.3333 4.08934 9.244 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.244 4.08934 11.3333 6.66667 11.3333Z" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M14 14L10 10" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                {/* Chat Stistics Heading Goes Here*/}
-
-                <div className="flex w-full items-center justify-between px-2 pb-2 mt-6">
-                    <div className="overflow-x-auto w-full">
-                        <table className="min-w-full table-auto border-collapse border border-gray-200">
-                            <thead>
-                                <tr className="bg-appTitleBgColor text-center text-white text-base">
-                                    <th className="border p-2">
-                                        <input type="checkbox" />
-                                    </th>
-                                    <th className="border p-2">Order ID</th>
-                                    <th className="border p-2">Date Loaded</th>
-                                    <th className="border p-2">Status</th>
-                                    <th className="border p-2">Pick Up Location</th>
-                                    <th className="border p-2">Drop Off Location</th>
-                                    <th className="border p-2">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {orders.map((order) => (
-                                    <>
-                                        <tr key={order.orderId} className="text-center bg-appBanner/80 font-semibold text-base">
-                                            <th className="border p-2">
-                                                <input type="checkbox" />
-                                            </th>
-                                            <td className="border p-2">{order.orderId}</td>
-                                            <td className="border p-2">{order.dateLoaded}</td>
-                                            <td className="border p-2"> <span className="bg-green-800 px-3 py-1 rounded-lg text-white"> {order.status} </span></td>
-                                            <td className="border p-2">{order.pickUpLocation}</td>
-                                            <td className="border p-2">{order.dropOffLocation}</td>
-                                            <td className="border p-2">
-                                                <p
-                                                    className="Haction cursor-pointer text-white bg-appTitleBgColor py-1 rounded-lg"
-                                                    onClick={() => toggleDropdownSecondTable(order.orderId)}
-                                                >
-                                                    {openDropdownsTable[order.orderId] ? "Hide Details" : "View Details"}
-                                                </p>
-                                            </td>
-                                        </tr>
-
-                                        {/* This is the row that will toggle on clicking */}
-                                        {openDropdownsTable[order.orderId] && (
-                                            <tr className="w-full">
-                                                <td colSpan={6} className="">
-                                                    <div className="bg-gray-50 shadow-md rounded mt-2 mb-4 mx-auto">
-                                                        <table className="min-w-full table-auto border-collapse border border-gray-200">
-                                                            <thead>
-                                                                <tr className="bg-appNav text-center">
-                                                                    <th className="border p-2">SN</th>
-                                                                    <th className="border p-2">ITEM NAME</th>
-                                                                    <th className="border p-2">CATEGORY</th>
-                                                                    <th className="border p-2">FRAGILE</th>
-                                                                    <th className="border p-2">QUANTITY</th>
-                                                                    <th className="border p-2">WEIGHT</th>
-                                                                    <th className="border p-2">SHIPPING TYPE</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                {items?.map((item) => (
-                                                                    <tr key={item.sn} className="text-center bg-appBanner/95 text-white">
-                                                                        <td className="border p-2">{item.sn}</td>
-                                                                        <td className="border p-2">{item.itemName}</td>
-                                                                        <td className="border p-2">{item.category}</td>
-                                                                        <td className="border p-2">{item.fragile ? "Yes" : "No"}</td>
-                                                                        <td className="border p-2">{item.quantity}</td>
-                                                                        <td className="border p-2">{item.weight}</td>
-                                                                        <td className="border p-2">{item.shippingType}</td>
-                                                                    </tr>
-                                                                ))}
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        )}
-                                    </>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
+            <div className="w-full mt-6">
+                <UserOrder />
             </div>
             {/* Order List Section Ends Here */}
         </UserDashboardLayout>
