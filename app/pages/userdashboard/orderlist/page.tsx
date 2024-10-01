@@ -1,12 +1,17 @@
-import UserDashboardLayout from '@/app/components/layout/UserDashboardLayout';
 import React from 'react';
+import { useState } from 'react';
+import UserOrder from './UserOrder';
+import UserDashboardLayout from '@/app/components/userdashboardlayout/layout/UserDashboardLayout';
 
-const page = () => {
+
+const page: React.FC = () => {
+
+ 
+
   return (
-      <UserDashboardLayout>
-          <h2 className="text-2xl font-bold text-black">Order List</h2>
-          <p>Adjust your settings here.</p>
-      </UserDashboardLayout>
+    <UserDashboardLayout>
+      <UserOrder />
+    </UserDashboardLayout>
   );
 }
 

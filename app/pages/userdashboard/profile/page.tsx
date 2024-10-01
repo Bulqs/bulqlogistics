@@ -1,5 +1,5 @@
 import React from 'react';
-import UserDashboardLayout from '@/app/components/layout/UserDashboardLayout';
+import UserDashboardLayout from '@/app/components/userdashboardlayout/layout/UserDashboardLayout';
 
 const page: React.FC = () => {
     return (
