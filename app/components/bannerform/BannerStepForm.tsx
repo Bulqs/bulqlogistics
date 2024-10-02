@@ -210,12 +210,12 @@ const BannerStepForm: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="City" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="Country" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Country
                                                 </label>
                                                 <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
                                                     <InputField
-                                                        id="city"
+                                                        id="country"
                                                         name="country"
                                                         value={formData.country}
                                                         placeholder="Select your country"
@@ -226,7 +226,7 @@ const BannerStepForm: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Country" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="City" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     City
                                                 </label>
                                                 <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">

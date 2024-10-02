@@ -1,11 +1,24 @@
+"use client"
+import React, { useState } from 'react';
 import Link from 'next/link';
-import React from 'react';
 import { FaCircle, FaTrashAlt } from 'react-icons/fa';
 import { MdEdit } from 'react-icons/md';
+import EditModal from '@/app/components/userdashboardlayout/modal/Editmodal';
 
 
 
 const UserAddress: React.FC = () => {
+
+     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <>
 
@@ -17,7 +30,7 @@ const UserAddress: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col w-full bg-black items-start justify-start p-2">
+                <div className="flex flex-col w-full bg-appBanner/20 items-start justify-start p-4">
                     <p className='text-white text-justify text-sm'>
                         {/* full address should be called here */}
                         No 25 Off Famoritade Street Agbede Olosugbo, Ikorodu Lagos Yomlinks Cafe.
@@ -43,20 +56,28 @@ const UserAddress: React.FC = () => {
                 </div>
 
                 <div className="w-full flex items-center justify-end gap-4 bg-appTitleBgColor p-2">
-
+{/* 
                     <Link href="#">
-                        <FaTrashAlt className="text-red-600 text-lg cursor-pointer" />
+                        <FaTrashAlt className="text-red-600 text-lg cursor-pointer" /> <span> Delete </span> 
                     </Link>
 
                     <Link href="#">
-                        <MdEdit className="text-white text-lg cursor-pointer" />
+                        <MdEdit className="text-white text-lg cursor-pointer" />  <span onClick={openModal}>Edit </span> 
+                    </Link> */}
+
+                    <Link href="#" className="flex items-center justify-center bg-green-500 gap-2 py-1 px-2 rounded-sm">
+                        <FaTrashAlt className="text-gray-700 text-md cursor-pointer" /> <span className="text-gray-700 font-semibold text-xs"> Delete </span>
+                    </Link>
+
+                    <Link href="#" className='flex items-center justify-center bg-green-500 gap-2 py-1 px-2 rounded-sm'>
+                        <MdEdit className="text-gray-700 text-md cursor-pointer" /> <span className="text-gray-700 font-semibold text-xs" onClick={openModal}> Edit </span>
                     </Link>
 
                 </div>
 
             </div>
 
-           
+            <EditModal isOpen={isModalOpen} onClose={closeModal} />
         </>
     );
 }
