@@ -21,7 +21,7 @@ const page = () => {
 
   return (
     <UserDashboardLayout>
-      
+
       <div className="flex bg-gray-800 px-2 py-1 mb-4 rounded-md">
         <h2 className="text-xl font-bold text-white p-1">ADD PAYMENT CARD</h2>
       </div>
@@ -35,10 +35,11 @@ const page = () => {
           <span> <AiFillPlusSquare className='text-lg text-white' /> </span> <span className="font-semibold text-white Address" onClick={openModal}> Add New Card </span>
         </div>
       </div>
-      
+
       {/* Modal component */}
       <PaymentModal isOpen={isModalOpen} onClose={closeModal} />
-      </UserDashboardLayout>
+
+    </UserDashboardLayout>
   );
 }
 

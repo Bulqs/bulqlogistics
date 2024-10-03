@@ -34,8 +34,8 @@ const Header: React.FC = () => {
   
 
     return (
-        <nav className="bg-appNav shadow-md shadow-appTitleBgColor w-full pt-2  md:py-2 border-b-3 border-appTitleBgColor">
-            <div className="container mx-auto px-4 flex items-center justify-between py-1">
+        <nav className="bg-appNav shadow-md shadow-appTitleBgColor w-full pt-2 px-4  md:py-2 border-b-3 border-appTitleBgColor">
+            <div className=" mx-auto px-0 flex items-center justify-between py-1">
                 {/* Logo */}
                 <div className="flex items-center justify-center">
                     <Link href="/" className="flex items-center justify-center w-full">
@@ -122,7 +122,7 @@ const Header: React.FC = () => {
                 <div className="hidden md:flex space-x-4">
                 
                     {loggedIn ? (
-                        <div className="hidden sm:flex justify-end flex-row lg:pr-7 sm:pr-6 py-3 pr-4 pl-8 Drops relative">
+                        <div className="hidden sm:flex justify-end flex-row lg:pr-3 sm:pr-6 py-3 pl-8 Drops relative">
                             <div className="flex justify-center items-center flex-row">
                                 <img
                                     className="w-10 h-10"

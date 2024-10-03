@@ -7,9 +7,10 @@ import ReusableTextarea from '../inputs/ReusableTextarea';
 import Button from '../inputs/Button';
 import WhoToWhoHeading from '../inputs/WhoToWhoHeading';
 import WhoToWhoHeading2 from '../inputs/WhoToWhoHeading2';
+import LocationCard from '../locationcard/LocationCard';
 
 const BannerStepForm3: React.FC = () => {
-
+    const [currentStep, setCurrentStep] = useState(1);
     const [isInnerModalOpen, setIsInnerModalOpen] = useState<boolean>(false);
 
     const [formData, setFormData] = useState({
@@ -30,8 +31,18 @@ const BannerStepForm3: React.FC = () => {
         weight: '',
     });
 
+    const workingHours = [
+        { day: "Monday", hours: "8am - 5pm" },
+        { day: "Tuesday", hours: "8am - 5pm" },
+        { day: "Wednesday", hours: "8am - 5pm" },
+        { day: "Thursday", hours: "8am - 5pm" },
+        { day: "Friday", hours: "8am - 5pm" },
+        { day: "Saturday", hours: "8am - 5pm" },
+    ];
 
-    const [currentStep, setCurrentStep] = useState(1);
+    const phoneNumbers = ["+234 807 8789 675", "+234 807 8789 675", "+234 807 8789 675"];
+
+   
 
     const handleNext = () => {
         setCurrentStep((prev) => prev + 1);
@@ -70,6 +81,7 @@ const BannerStepForm3: React.FC = () => {
                                 textColor="text-appWhite"
                                 additionalClasses=" py-3 px-4"
                             />
+
                             {/* Step Indicators */}
                             <div className="flex items-center justify-center gap-2 pt-5">
                                 <div className="flex flex-col items-center justify-center w-80">
@@ -263,125 +275,59 @@ const BannerStepForm3: React.FC = () => {
                                 </div>
                             )}
                             {currentStep === 2 && (
-                                <div>
-                                    <div className="my-2 mx-auto xl:w-full xl:mx-0">
-                                        <div className="xl:flex lg:flex md:flex flex-wrap justify-between">
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="FirstName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Receiver's First Name
-                                                </label>
-
-                                                <InputField
-                                                    id="FirstName"
-                                                    name="firstName"
-                                                    value={formData.firstName}  // Your state value
-                                                    placeholder="Enter your firstname"
-                                                    required={true}
-                                                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                                <div className="">
+                                    <div className="w-6/12">
+                                        <div className="w-80 bg-white border rounded border-gray-700 flex items-center lg:mr-60">
+                                            <input className="mx-2 focus:outline-none w-full py-2 text-sm leading-none placeholder-gray-600 text-gray-600" placeholder="Search here" />
+                                            <svg className="mr-2" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.66667 11.3333C9.244 11.3333 11.3333 9.244 11.3333 6.66667C11.3333 4.08934 9.244 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.244 4.08934 11.3333 6.66667 11.3333Z" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M14 14L10 10" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="my-0 mt-4 mx-auto w-full xl:mx-0 flex flex-col h-80 overflow-y-scroll ">
+                                        <div className="grid grid-cols-2 mb-0 w-full gap-4">
+                                            <div className="flex mb-2 w-full">
+                                                <LocationCard
+                                                    title="Bulq Lagos"
+                                                    location="Ikeja"
+                                                    address="123 Ikeja Road, Lagos Island"
+                                                    workingHours={workingHours}
+                                                    phoneNumbers={phoneNumbers}
                                                 />
 
                                             </div>
 
-
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="LastName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Receiver's's First Name
-                                                </label>
-
-
-                                                <InputField
-                                                    id="LastName"
-                                                    name="lastName"
-                                                    value={formData.lastName}  // Your state value
-                                                    placeholder="Enter your lastname"
-                                                    required={true}
-                                                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                                            <div className="flex mb-2 w-full ">
+                                                <LocationCard
+                                                    title="Bulq Lagos"
+                                                    location="Ikeja"
+                                                    address="123 Ikeja Road, Lagos Island"
+                                                    workingHours={workingHours}
+                                                    phoneNumbers={phoneNumbers}
                                                 />
-
-
-                                            </div>
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="email2" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Email
-                                                </label>
-                                                <div className="relative">
-
-                                                    <InputField
-                                                        id="email"
-                                                        name="email"
-                                                        value={formData.email}  // Your state value
-                                                        placeholder="Enter your email"
-                                                        required={true}
-                                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                    />
-                                                </div>
                                             </div>
 
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="StreetAddress" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Street Address
-                                                </label>
-
-
-                                                <InputField
-                                                    id="address"
-                                                    name="address"
-                                                    value={formData.address}  // Your state value
-                                                    placeholder="Enter your address"
-                                                    required={true}
-                                                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                                            <div className="flex mb-2 w-full ">
+                                                <LocationCard
+                                                    title="Bulq Lagos"
+                                                    location="Ikeja"
+                                                    address="123 Ikeja Road, Lagos Island"
+                                                    workingHours={workingHours}
+                                                    phoneNumbers={phoneNumbers}
                                                 />
-
                                             </div>
 
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="City" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Country
-                                                </label>
-                                                <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
-                                                    <InputField
-                                                        id="city"
-                                                        name="country"
-                                                        value={formData.country}
-                                                        placeholder="Select your country"
-                                                        dropdownOptions={['USA', 'Canada', 'UK']}
-                                                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Country" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    City
-                                                </label>
-                                                <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
-                                                    <InputField
-                                                        id="city"
-                                                        name="city"
-                                                        value={formData.city}
-                                                        placeholder="Select your city"
-                                                        dropdownOptions={['OTTAWA', 'LAGOS', 'MOSCOW']}
-                                                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Phonenumber" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
-                                                    Phone Number
-                                                </label>
-
-                                                <InputField
-                                                    id="phone"
-                                                    name="phone"
-                                                    value={formData.phone}  // Your state value
-                                                    placeholder="Enter your phone"
-                                                    required={true}
-                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            <div className="flex mb-2 w-full ">
+                                                <LocationCard
+                                                    title="Bulq Lagos"
+                                                    location="Ikeja"
+                                                    address="123 Ikeja Road, Lagos Island"
+                                                    workingHours={workingHours}
+                                                    phoneNumbers={phoneNumbers}
                                                 />
-
                                             </div>
-
+                                            
                                         </div>
                                     </div>
                                 </div>
