@@ -8,11 +8,7 @@ import gmail from '../../../../public/images/gmail.png'
 import { MdCancel } from "react-icons/md";
 
 
-
-
 const UserHeader: React.FC = () => {
-
-
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [openItems, setOpenItems] = useState<number | null>(null); // Track which item is open
