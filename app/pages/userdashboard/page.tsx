@@ -272,7 +272,7 @@ const DashboardHome: React.FC = () => {
             {/* Chart Section Ends Here */}
 
             {/* Order List Sectioin Goes Here */}
-            <div className="w-full mt-6">
+            <div className="w-full mt-12 mb-12">
                 <UserOrder />
             </div>
             {/* Order List Section Ends Here */}

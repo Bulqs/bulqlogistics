@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image'
 import { navigation } from '@/data/data';
 import { FontAwesomeIcons } from './FontAwesomeIcons';
+import mastercard2 from '../../public/images/mastercard2.png';
+import stripe from '../../public/images/stripe.png';
 
 const Footer = () => {
   return (
@@ -37,15 +39,27 @@ const Footer = () => {
                           <FontAwesomeIcons />
                       </div>
                   </div>
-                  <div className="flex space-x-6 md:order-2 xl:mt-12">
-                      <p className="font-bold mt-8 text-base leading-5 text-appWhite font-inter md:order-1 md:mt-0">
-                          PAYMENT METHODS & DELIVERY
-                      </p>
+                  <div className="flex space-x-2 md:order-2 xl:mt-12 items-center justify-center">
+                      <Image
+                          src={mastercard2}
+                          alt="Description of the image"
+                          width={50} // The width of the displayed image
+                          height={50} // The height of the displayed image
+                      />
+
+                      <Image
+                          src={stripe}
+                          alt="Description of the image"
+                          width={50} // The width of the displayed image
+                          height={50} // The height of the displayed image
+                      />
+                      <p className='font-bold text-white'>&copy; {new Date().getFullYear()} BULQ LOGISTICS </p>
                   </div>
-                  <div className="flex space-x-6 md:order-2 xl:mt-12">
+                  <div className="flex space-x-6 md:order-2 xl:mt-12 items-center justify-center">
                       <p className="font-bold mt-8 text-lg leading-5 text-appWhite font-inter md:order-1 md:mt-0">
-                          Copyrite section comming soon
-                      </p>
+                          <span className="font-semibold"> Powered By: </span>
+                          <span className="font-bold"> Coming Soon </span>
+                      </p> 
                   </div>
 
               </div>

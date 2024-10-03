@@ -88,52 +88,66 @@ const page: React.FC = () => {
 
         {/* Location Card Section Goes Here */}
         <div className="flex flex-wrap gap-6 px-8 py-8 w-full">
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
 
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
 
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
 
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
 
-          <LocationCard
-            title="Bulq Lagos"
-            location="Ikeja"
-            address="123 Ikeja Road, Lagos Island"
-            workingHours={workingHours}
-            phoneNumbers={phoneNumbers}
-          />
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
+
+          <div className="w-[32.2%]">
+            <LocationCard
+              title="Bulq Lagos"
+              location="Ikeja"
+              address="123 Ikeja Road, Lagos Island"
+              workingHours={workingHours}
+              phoneNumbers={phoneNumbers}
+            />
+          </div>
+          
         </div>
         {/* Location Card Section Ends Here */}
       </div>

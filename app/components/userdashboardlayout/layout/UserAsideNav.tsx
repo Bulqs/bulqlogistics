@@ -31,22 +31,22 @@ const UserAsideNav: React.FC = () => {
                     Dashboard
                 </div> */}
           <div className="text-2xl font-semibold mb-6 border-b-2 border-white">
-              <div className="hidden sm:flex justify-end flex-row py-3 pr-3 pl-2 Drops relative">
-                  <div className="flex justify-center items-center flex-row">
+              <div className="hidden sm:flex justify-start flex-row py-3 pr-3 pl-2 Drops relative">
+                  <div className="flex items-center justify-start flex-row">
                       <img
                           className="w-10 h-10"
                           src="https://i.ibb.co/QMddNDb/Ellipse-14.png"
                           alt="individual person"
                       />
                       <div className="ml-2">
-                          <p className="text-base leading-4 font-semibold text-white">
-                              David Hulk
+                          <p className="text-lg leading-4 font-semibold text-white">
+                              Umar Ibrahim A.
                           </p>
                           <p className="font-normal text-xs leading-3 text-white mt-1">
-                              david@alphahulk.com
+                              umaribrahim@gmail.com
                           </p>
                       </div>
-                      <svg
+                      {/* <svg
                           onClick={toggleDropdownProfile}
                           className={`${rotate ? 'rotate-180' : ''
                               } bg-white cursor-pointer transform duration-100 xl:ml-3 lg:ml-3 ml-2 p-1 rounded-full`}
@@ -63,11 +63,11 @@ const UserAsideNav: React.FC = () => {
                               strokeLinecap="round"
                               strokeLinejoin="round"
                           />
-                      </svg>
+                      </svg> */}
                   </div>
 
                   {/* Dropdown Menu */}
-                  {dropdownOpen && (
+                  {/* {dropdownOpen && (
                       <div className="absolute right-0 mt-14 w-56 shadow-md rounded-b-lg z-50">
                           <ul className="pt-2 bg-gray-800 rounded-md text-sm shadow-sm shadow-white overflow-hidden">
                               <li className="px-4 py-2 hover:bg-gray-100 hover:text-black cursor-pointer text-white font-semibold">Tracking ID</li>
@@ -81,7 +81,7 @@ const UserAsideNav: React.FC = () => {
                               <li className="bg-white text-center px-4 py-2 hover:bg-black hover:text-white cursor-pointer text-red-600 font-semibold">LOGOUT</li>
                           </ul>
                       </div>
-                  )}
+                  )} */}
               </div>
           </div>
 
