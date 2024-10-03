@@ -15,11 +15,13 @@ import bannerBacground from '../../public/images/banner2.png';
 import BannerStepForm from '../components/bannerform/BannerStepForm';
 import Header from '../components/Header';
 import background from '../../public/images/ship.png';
+import Footer from '../components/Footer';
 
 
 const LandingPage = () => {
     return (
         <>
+            <Header />
             <div className='w-full bg-appWhite lg:pb-24'>
 
                 {/* <div className="w-full flex m-0 p-0">
@@ -91,6 +93,7 @@ const LandingPage = () => {
                 </div>
             </div>
             <NewLetterSection />
+            <Footer />
         </>
     )
 }
