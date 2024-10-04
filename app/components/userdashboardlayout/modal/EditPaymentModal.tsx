@@ -52,7 +52,7 @@ const EditPaymentModal: React.FC<EditPaymentModalProps> = ({ isOpen, onClose }) 
                             </div>
 
                             <form className="mt-4">
-                                <div className="flex items-center space-x-9">
+                                <div className="flex items-center space-x-4 md:space-x-9">
                                     <InputField
                                         id="expiredate"
                                         type="date"

@@ -24,7 +24,7 @@ const UserAsideNav: React.FC = () => {
 
     return (
         <aside
-            className={`relative h-full md:h-screen bg-gray-800 text-white flex flex-col p-2 md:p-4 transition-all duration-300 ${isCollapsed ? "w-20" : " w-[266px] md:w-64"
+            className={`relative h-full md:h-screen bg-gray-800 text-white flex flex-col p-2 md:p-4 transition-all duration-300 ${isCollapsed ? "w-20" : " w-[266px] sm:w-72 md:w-64"
                 }`}
         >
             {/* Toggle Button */}
@@ -59,7 +59,7 @@ const UserAsideNav: React.FC = () => {
                 </div>
             </div>
 
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-0 md:space-y-2">
                 <Link
                     href="/pages/userdashboard"
                     className={`px-1 md:px-3 gap-2 md:gap-4 py-2 rounded-md flex items-center justify-start font-semibold  ${pathname === "/pages/userdashboard"

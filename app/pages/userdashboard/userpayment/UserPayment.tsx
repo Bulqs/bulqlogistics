@@ -22,7 +22,7 @@ const UserPayment: React.FC = () => {
 
     return (
         <>
-            <div className="w-[30%] bg-appTitleBgColor rounded-lg flex flex-row overflow-hidden border-[1.7px] border-appTitleBgColor">
+            <div className="w-full md:w-[30%] bg-appTitleBgColor rounded-lg flex flex-row overflow-hidden border-[1.7px] border-appTitleBgColor">
 
                 <div className="flex w-5/12 p-2 bg-white">
                     <Image
