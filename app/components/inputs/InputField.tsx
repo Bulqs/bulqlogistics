@@ -145,7 +145,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     value={value}
                     required={required}
                     onChange={onChange}
-                    className="font-semibold bg-white w-full border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100 "
+                    className="placeholder:text-xs font-semibold bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100 "
                 >
                     <option value="" disabled>
                         {placeholder}
@@ -177,7 +177,7 @@ const InputField: React.FC<InputFieldProps> = ({
                         placeholder={placeholder}
                         required={required}
                         onChange={onChange}
-                        className="bg-white w-full border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded-r text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
+                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded-r text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
                     />
                 </div>
             ) : (
@@ -189,7 +189,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     placeholder={placeholder}
                     required={required}
                     onChange={onChange}
-                    className="bg-white w-full border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
+                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
                 />
             )}
         </>

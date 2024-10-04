@@ -3,26 +3,28 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaCircle, FaTrashAlt } from 'react-icons/fa';
 import { MdEdit } from 'react-icons/md';
-import EditModal from '@/app/components/userdashboardlayout/modal/Editmodal';
+import EditModal from '@/app/components/userdashboardlayout/modal/EditModal';
 
 
 
 const UserAddress: React.FC = () => {
 
-     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenAddressEditModel, setIsModalOpenAddressEditModel] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
+    const openAddressModalEdit = () => {
+        setIsModalOpenAddressEditModel(true);
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
+    const closeAddressModalEdit = () => {
+        setIsModalOpenAddressEditModel(false);
     };
+
+    
 
     return (
         <>
 
-            <div className="w-[31%] bg-appTitleBgColor rounded-lg flex flex-col overflow-hidden">
+            <div className="w-full md:w-[31%] bg-appTitleBgColor rounded-lg flex flex-col overflow-hidden">
                 <div className="flex w-full bg-appTitleBgColor items-center justify-between p-2">
                     <p className='text-white font-semibold'>Akinwale Olawale Home</p>
                     <div className="flex items-center justify-center">
@@ -70,14 +72,14 @@ const UserAddress: React.FC = () => {
                     </Link>
 
                     <Link href="#" className='flex items-center justify-center bg-green-500 gap-2 py-1 px-2 rounded-sm'>
-                        <MdEdit className="text-gray-700 text-md cursor-pointer" /> <span className="text-gray-700 font-semibold text-xs" onClick={openModal}> Edit </span>
+                        <MdEdit className="text-gray-700 text-md cursor-pointer" /> <span className="text-gray-700 font-semibold text-xs" onClick={openAddressModalEdit}> Edit </span>
                     </Link>
 
                 </div>
 
             </div>
 
-            <EditModal isOpen={isModalOpen} onClose={closeModal} />
+            <EditModal isOpenAddressEditModal={isModalOpenAddressEditModel} onCloseAddressEditModal={closeAddressModalEdit} />
         </>
     );
 }
