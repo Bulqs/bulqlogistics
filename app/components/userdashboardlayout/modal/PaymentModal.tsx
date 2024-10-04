@@ -49,9 +49,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
                             </div>
 
                             <form className="mt-4">
-                                <div className="flex items-center space-x-9">
+                                <div className="flex items-center space-x-4 md:space-x-9">
                                     <InputField
-                                        id="expiredate"
+                                        id="expireDate"
                                         type="date"
                                         name="expireDate"
                                         value={formData.expireDate}  // Your state value

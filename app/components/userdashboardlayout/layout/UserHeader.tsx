@@ -103,10 +103,10 @@ const UserHeader: React.FC = () => {
 
 
   return (
-      <header className=" p-4 shadow-md w-full flex flex-row items-center justify-between">
-          <div className="flex items-center justify-start w-full ">
+      <header className=" p-4 shadow-md w-[90%] md:w-full flex flex-row items-center justify-between md:justify-between bg-red-800">
+          <div className="flex items-center justify-start w-7/12 md:w-full bg-yellow-700 ">
               <h1 className="text-base md:text-xl font-semibold text-black"> Overview</h1>
-              <div className="w-28 md:w-64 bg-white border rounded border-gray-700 flex items-center md:mr-60 ml-2 md:ml-6">
+              <div className="w-40 md:w-64 bg-white border rounded border-gray-700 flex items-center md:mr-60 ml-2 md:ml-6">
                   <input className="mx-2 focus:outline-none w-full py-1 md:py-2 text-sm leading-none placeholder-gray-600 text-gray-600" placeholder="Search here" />
                   <svg className="mr-2" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.66667 11.3333C9.244 11.3333 11.3333 9.244 11.3333 6.66667C11.3333 4.08934 9.244 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.244 4.08934 11.3333 6.66667 11.3333Z" stroke="#4B5563" strokeLinecap="round" strokeLinejoin="round" />
@@ -115,7 +115,7 @@ const UserHeader: React.FC = () => {
               </div>
           </div>
 
-          <div className="flex items-end justify-end w-full  pr-4">
+          <div className="flex items-end justify-end w-[11%] md:w-full pr-3 md:pr-4 bg-white">
               <div className="relative">
                   <button
                       aria-label="show notifications"
