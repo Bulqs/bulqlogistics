@@ -4,11 +4,11 @@ import InputField from '../../inputs/InputField';
 import Button from '../../inputs/Button';
 
 interface EditModalProps {
-    isOpen: boolean;
-    onClose: () => void;
+    isOpenAddressEditModal: boolean;
+    onCloseAddressEditModal: () => void;
 }
 
-const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const EditModal: React.FC<EditModalProps> = ({ isOpenAddressEditModal, onCloseAddressEditModal }) => {
 
     const [formData, setFormData] = useState({
         lastName: '',
@@ -21,16 +21,16 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         region: '',
     });
 
-    if (!isOpen) return null;
+    if (!isOpenAddressEditModal) return null;
 
     return (
         <div id="popup" className="z-50 fixed w-full flex justify-center inset-0 bg-appTitleBgColor/80 ">
             <div className="mx-auto container">
                 <div className="flex items-center justify-center h-full w-full">
                     <div className="bg-white rounded-md shadow fixed overflow-y-auto sm:h-auto w-10/12 md:w-8/12 lg:w-1/2 2xl:w-2/5">
-                        <div className="bg-appTitleBgColor rounded-tl-md rounded-tr-md px-4 md:px-8 md:py-4 py-7 flex items-center justify-between">
+                        <div className="bg-appTitleBgColor rounded-tl-md rounded-tr-md px-4 md:px-8 md:py-4 py-3 flex items-center justify-between">
                             <p className="text-lg font-semibold text-white ">Edit Address</p>
-                            <button onClick={onClose} className="focus:outline-none">
+                            <button onClick={onCloseAddressEditModal} className="focus:outline-none">
                                 <svg width={28} height={28} viewBox="0 0 28 28" fill="white" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21 7L7 21" stroke="#fff" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M7 7L21 21" stroke="#fff" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
@@ -39,8 +39,8 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         </div>
                         <div className="px-4 md:px-10 pt-6 md:pt-2 md:pb-4 pb-7">
 
-                            <form className="mt-4">
-                                <div className="flex items-center space-x-9">
+                            <form className="md:mt-4">
+                                <div className="flex items-center md:space-x-9 space-x-4">
                                     <InputField
                                         id="FirstName"
                                         name="firstName"
@@ -60,7 +60,7 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                                     />
                                 </div>
 
-                                <div className="flex items-center space-x-9 mt-4">
+                                <div className="flex items-center s md:space-x-9 space-x-4 mt-4">
                                     <InputField
                                         id="phone"
                                         name="phone"
@@ -81,7 +81,7 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                                     />
                                 </div>
 
-                                <div className="flex items-center space-x-9 mt-4">
+                                <div className="flex items-center  md:space-x-9 space-x-4 mt-4">
                                     <InputField
                                         id="address"
                                         name="address"
@@ -92,7 +92,7 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                                     />
                                 </div>
 
-                                <div className="flex items-center space-x-9 mt-4">
+                                <div className="flex items-center  md:space-x-9 space-x-4 mt-4">
                                     <InputField
                                         id="region"
                                         name="rigion"
@@ -113,11 +113,11 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                                 </div>
                             </form>
                             <div className="flex items-center justify-between mt-9">
-                                <Button type="submit" className="bg-red-700" onClick={onClose}>
+                                <Button type="submit" className="bg-red-700" onClick={onCloseAddressEditModal}>
                                     CANCLE
                                 </Button>
                                 <Button type="submit">
-                                    SAVE ADDRESS
+                                    EDIT ADDRESS
                                 </Button>
                             </div>
                         </div>

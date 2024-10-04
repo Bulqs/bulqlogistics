@@ -21,7 +21,7 @@ const UserDashboardLayout = ({ children }: UserDashboardLayoutProps) => {
    
 
     return (
-        <div className="flex h-screen">
+        <div className="flex h-screen bg-pink-200 overflow-hidden">
             {/* Side Navigation */}
             <UserAsideNav />
             {/* Side Navigation */}
