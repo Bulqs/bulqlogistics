@@ -22,7 +22,7 @@ const page = () => {
   return (
     <UserDashboardLayout>
       
-      <div className="w-[90%] md:w-full">
+      <div className="flex flex-col w-full">
         <div className="flex flex-row items-center justify-between bg-gray-800 px-2 py-1 mb-4 rounded-md">
           <h2 className="text-sm md:text-xl font-bold text-white p-1">ADD PAYMENT CARD</h2>
           <div className=" p-1 md:p-2 cursor-pointer bg-appTitleBgColor flex items-center justify-end gap-2">
@@ -30,7 +30,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-start justify-start gap-x-14 gap-y-4">
+        <div className="flex flex-row flex-wrap items-start justify-start gap-x-14 gap-y-4 md:grid md:grid-cols-3">
           <UserPayment />  <UserPayment /> <UserPayment /> <UserPayment />
         </div>
 
