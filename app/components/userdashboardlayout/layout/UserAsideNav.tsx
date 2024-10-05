@@ -24,13 +24,13 @@ const UserAsideNav: React.FC = () => {
 
     return (
         <aside
-            className={`relative h-full md:h-screen bg-gray-800 text-white flex flex-col p-2 md:p-4 transition-all duration-300 ${isCollapsed ? "w-20" : " w-[266px] sm:w-72 md:w-64"
+            className={`relative h-full md:h-screen items-center justify-start bg-gray-800 text-white flex flex-col p-2 md:p-4 transition-all duration-300 ${isCollapsed ? "w-12" : " w-[266px] md:w-64"
                 }`}
         >
             {/* Toggle Button */}
             <button
                 onClick={toggleSidebar}
-                className="absolute top-2 md:top-8 right-2 md:right-4 bg-gray-600 p-2 rounded-md text-white"
+                className="absolute top-2 md:top-4 right-2 md:right-2 bg-gray-600 p-2 rounded-md text-white"
             >
                 {isCollapsed ? <FaArrowAltCircleRight /> : <FaArrowAltCircleLeft />
 }
@@ -122,10 +122,10 @@ const UserAsideNav: React.FC = () => {
                 </Link>
             </nav>
 
-            <div className=" absolute flex flex-col w-full bottom-16 md:bottom-24 left-0 pl-1 md:pl-3 pr-1 md:pr-4">
+            <div className=" absolute flex flex-col w-full bottom-16 md:bottom-24 items-start justify-start md:items-start md:justify-center pl-2 md:pl-0 md:pr-4 ">
                 <Link
                     href="/pages/userdashboard/usercustomercare"
-                    className={`px-1 md:px-3 gap-2 md:gap-4 py-1 md:py-2 rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usercustomercare"
+                    className={`md:w-full px-1 md:px-3 gap-2 md:gap-4 py-1 md:py-2 rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usercustomercare"
                         ? "bg-gray-700"
                         : "hover:bg-gray-700"
                         }`}
@@ -138,7 +138,7 @@ const UserAsideNav: React.FC = () => {
 
                 <Link
                     href="/pages/userdashboard/usersettings"
-                    className={`px-1 md:px-3 gap-2 md:gap-4 py-1 md:py-2  rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usersettings"
+                    className={`md:w-full px-1 md:px-3 gap-2 md:gap-4 py-1 md:py-2  rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usersettings"
                         ? "bg-gray-700"
                         : "hover:bg-gray-700"
                         }`}
@@ -151,7 +151,7 @@ const UserAsideNav: React.FC = () => {
 
                 <Link
                     href="/pages/userdashboard/usersettings"
-                    className={`px-1 md:px-3 gap-2 md:gap-4  py-1 md:py-2 rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usersettings"
+                    className={`md:w-full px-1 md:px-3 gap-2 md:gap-4  py-1 md:py-2 rounded-md flex items-center justify-start ${pathname === "/pages/userdashboard/usersettings"
                         ? "bg-red-700"
                         : "hover:bg-red-800"
                         }`}
