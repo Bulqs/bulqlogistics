@@ -28,7 +28,7 @@ const LandingPage = () => {
                 <Header />
             </div> */}
 
-                <div className="w-full py-16 relative" style={{
+                <div className="w-full items-center justify-center relative md:h-[90vh] md:max-h-[90vh] " style={{
                     backgroundImage: `url(${background.src})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
