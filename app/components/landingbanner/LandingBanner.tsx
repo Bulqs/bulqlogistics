@@ -1,15 +1,14 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LandingBannerCard from './LandingBannerCard';
 import LandingBannerSearch from './LandingBannerSearch';
 import { IoMdCloseCircle } from "react-icons/io";
 import LandingBannerCard2 from './LandingBannerCard2';
 import BannerStepForm from '../bannerform/BannerStepForm';
 import BannerStepForm2 from '../bannerform/BannerStepForm2';
-import logo from '../../../public/images/logo4.svg';
 import BannerStepForm3 from '../bannerform/BannerStepForm3';
 
-const LandingBanner = () => {
+const LandingBanner: React.FC = () => {
 
   // State for tracking modal open status
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,6 +20,53 @@ const LandingBanner = () => {
   const [selectedCard2, setSelectedCard2] = useState<{ title: string; description: string } | null>(null);
   const [selectedCard3, setSelectedCard3] = useState<{ title: string; description: string } | null>(null);
 
+  const [firstText, setFirstText] = useState('');
+  const [secondText, setSecondText] = useState('');
+  const firstString = 'Ship To Any Part Of The World';
+  const secondString = 'With Peace Of Mind';
+  const typingSpeed = 100; // Adjust typing speed as needed
+
+  useEffect(() => {
+    let isMounted = true;
+    let firstTimeout: NodeJS.Timeout, secondTimeout: NodeJS.Timeout;
+
+    // Function to handle typing for the first h2
+    const typeFirstText = (i = 0) => {
+      if (isMounted && i < firstString.length) {
+        setFirstText(firstText => firstText + firstString.charAt(i));
+        firstTimeout = setTimeout(() => typeFirstText(i + 1), typingSpeed);
+      } else {
+        // After the first text completes, start the second text typing
+        typeSecondText();
+      }
+    };
+
+    // Function to handle typing for the second h2
+    const typeSecondText = (i = 0) => {
+      if (isMounted && i < secondString.length) {
+        setSecondText(secondText => secondText + secondString.charAt(i));
+        secondTimeout = setTimeout(() => typeSecondText(i + 1), typingSpeed);
+      } else {
+        // Restart the process after a short delay
+        setTimeout(() => {
+          setFirstText('');
+          setSecondText('');
+          typeFirstText(); // Start the typing process again
+        }, 2000); // Adjust the delay before restarting the process
+      }
+    };
+
+    typeFirstText(); // Start typing the first text
+
+    // Clean up timeouts on unmount
+    return () => {
+      isMounted = false;
+      clearTimeout(firstTimeout);
+      clearTimeout(secondTimeout);
+    };
+  }, []);
+  
+  
   const openModal = (title: string, description: string) => {
     setSelectedCard({ title, description });
     setIsModalOpen(true);
@@ -61,22 +107,27 @@ const LandingBanner = () => {
 
 
   return (
-    <div className=''
+    <div className='flex flex-col md:h-[90vh] md:max-h-[90vh] items-center justify-center '
       // style={{
       //   backgroundImage: `url(${logo.src})`,
       //   backgroundSize: "cover",
       //   backgroundPosition: "center",
       // }}
     >
-      <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
-        <h2 className='h2Banner'> Ship To Any Part Of The World With Peace Of Mind </h2>
+      <div className='flex flex-col md:w-10/12 mx-auto itmes-center justify-evenly'>
+        {/* <h2 className='h2Banner'> Ship To Any Part Of The World  </h2>
+        <h2 className='h2Banner mt-4'> <span className="text-appBanner">With Peace Of Mind </span> </h2> */}
+        <h2 className="h2Banner fir">{firstText}</h2>
+        <h2 className="h2Banner sec mt-4">
+          <span className="text-appBanner">{secondText}</span>
+        </h2>
       </div>
 
       <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
         <LandingBannerSearch />
       </div>
 
-      <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
+      <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly gap-4'>
         <LandingBannerCard
           title="Pick up Package"
           description="Request Pick off and Drop off Services"

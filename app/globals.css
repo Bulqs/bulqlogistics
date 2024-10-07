@@ -22,6 +22,8 @@ body, *{
 }
 
 
+
+
 h1 {
   @apply text-appWhite font-medium text-5xl;
 }
@@ -168,7 +170,7 @@ h5 {
 /* landingBanner Section  Goes here */
 
 .bannerboxWrapper {
-  @apply md:w-3/12 bg-appTitleBgColor text-white border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
+  @apply md:w-4/12 bg-appTitleBgColor text-white border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
 }
 
 .bannerboxWrapper:hover {
@@ -176,18 +178,19 @@ h5 {
 }
 
 
+
+.bannerboxWrapper .bannerboxcardh4 {
+  @apply font-sans font-semibold flex text-center text-lg text-appWhite bg-appBanner px-2 py-1 rounded-2xl;
+
+}
+
 .bannerboxWrapper:hover .bannerboxcardh4 {
   @apply text-appBlack bg-appWhite;  
 }
 
 
-.bannerboxWrapper .bannerboxcardh4 {
-  @apply font-sans font-semibold flex text-center text-base text-appWhite bg-appBanner px-2 py-1 rounded-2xl;
-
-}
-
 .bannerboxWrapper .bannerboxcardPara{
-  @apply font-sans font-medium lg:text-xs text-appWhite lg:mt-1 text-center ;
+  @apply font-sans font-medium text-base text-appWhite lg:mt-1 text-center ;
 }
 
 /* for bannerboxwrapper2 */
@@ -219,8 +222,17 @@ h5 {
 
 
 .h2Banner{
-    @apply font-sans font-semibold text-4xl text-white;
+    @apply font-serif font-bold md:text-2xl lg:text-4xl xl:text-6xl text-center;
 }
+
+.sec {
+  @apply text-blue-500;
+}
+/* .h2Banner{
+    @apply font-serif font-bold md:text-2xl lg:text-4xl xl:text-6xl text-center;
+} */
+
+
 /* landingBanner Section ends here */
 
 

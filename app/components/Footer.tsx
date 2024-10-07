@@ -39,6 +39,7 @@ const Footer = () => {
                           <FontAwesomeIcons />
                       </div>
                   </div>
+                  
                   <div className="flex space-x-2 md:order-2 xl:mt-12 items-center justify-center">
                       <Image
                           src={mastercard2}
