@@ -51,7 +51,7 @@ h5 {
 
 
 .download-app-button {
-  @apply flex border-4 items-center justify-evenly  border-appWhite px-1 py-1 xl:px-3 lg:px-3 rounded-lg mt-2 md:mt-0 gap-x-3 md:gap-x-0 hover:bg-appNav focus:bg-appNav hover:text-appWhite focus:text-appWhite;
+  @apply flex border-2 md:border-4 items-center justify-evenly border-appWhite px-2 py-1 lg:px-3 rounded-lg mt-2 md:mt-0 gap-x-1 md:gap-x-0 hover:bg-appNav focus:bg-appNav hover:text-appWhite focus:text-appWhite;
 }
 /* .officialvendor-singleimg-container {
   @apply aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 h-72 ;
@@ -60,17 +60,17 @@ h5 {
 /* Logistics landing page section goes here */
 
 .headWrapper {
-  @apply flex flex-col w-full bg-appWhite lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24]; 
+  @apply flex flex-col w-full bg-appWhite lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24] md:py-8 py-4; 
 }
 
 
 .headWrapper .hompagecardh2 {
-  @apply font-semibold text-4xl text-appBlack font-mono;
+  @apply font-bold md:font-semibold text-base md:text-4xl text-appBlack font-mono;
 
 }
 
 .headWrapper .hompagecardPara {
-   @apply font-serif font-medium lg:text-lg text-appBlack lg:mt-4;
+   @apply font-serif font-medium text-sm md:text-lg text-appBlack lg:mt-4;
 
 }
 
@@ -79,7 +79,7 @@ h5 {
 }
 
 .cardWrapper .Card {
-  @apply w-6/12 bg-appBanner lg:max-h-64 lg:h-64 lg:px-4 lg:py-8;
+  @apply w-full md:w-6/12 bg-appBanner lg:max-h-64 lg:h-64 px-4 py-6 lg:px-4 lg:py-8;
 }
 
 .cardWrapper .Card:hover {
@@ -87,22 +87,22 @@ h5 {
 }
 
 .cardWrapper .Card .hompagecardh2 {
-  @apply font-sans font-semibold text-3xl text-appWhite;
+  @apply font-sans font-semibold text-base md:text-3xl text-appWhite;
 
 }
 
 .cardWrapper .Card .hompagecardPara{
-  @apply font-serif font-medium lg:text-lg text-appWhite lg:mt-4;
+  @apply font-serif font-medium text-sm lg:text-lg text-appWhite lg:mt-4 justify-between;
 }
 
 .cardWrapper .CardImage {
-  @apply w-6/12 lg:max-h-64 lg:h-64 flex flex-wrap overflow-hidden items-center justify-start;
+  @apply w-6/12 lg:max-h-64 lg:h-64 md:flex flex-wrap overflow-hidden items-center justify-start hidden md:block;
 }
 
 
 /* this code base is for card component3 */
 .cardWrapper .CardTransparent {
-  @apply w-6/12 bg-[#000033] lg:max-h-64 lg:h-64 lg:px-4 lg:py-8 md:rounded-r-xl;
+  @apply w-full md:w-6/12 bg-[#000033] lg:max-h-64 lg:h-64 px-4 py-6 lg:px-4 lg:py-8 md:rounded-r-xl;
 }
 
 .cardWrapper .CardTransparent:hover {
@@ -110,11 +110,11 @@ h5 {
 }
 
 .cardWrapper .CardTransparent .hompagecardh2 {
-  @apply font-sans font-semibold text-3xl text-appWhite;
+  @apply font-sans font-semibold text-base md:text-3xl text-appWhite;
 }
 
 .cardWrapper .CardTransparent .hompagecardPara{
-  @apply font-serif font-medium lg:text-lg text-appWhite lg:mt-4;
+  @apply font-serif font-medium text-sm lg:text-lg text-appWhite lg:mt-4;
 }
 /* this code base is for card component3 */
 
@@ -122,22 +122,22 @@ h5 {
 
 
 .offerheadWrapper {
-  @apply flex flex-col w-full lg:rounded-lg overflow-hidden items-center justify-center md:mb-[-24]; 
+  @apply flex flex-col w-10/12 md:w-full lg:rounded-lg overflow-hidden items-center justify-center mb-8 md:mb-[-24]; 
 }
 
 
 .offerheadWrapper .hompagecardh2 {
-  @apply font-bold text-4xl text-appWhite font-sans italic;
+  @apply font-bold text-2xl md:text-4xl text-appWhite font-sans italic;
 
 }
 
 .offerheadWrapper .hompagecardPara {
-   @apply font-serif font-medium lg:text-lg text-appBlack lg:mt-4;
+   @apply font-serif font-medium lg:text-lg text-appBlack mt-4 lg:mt-4;
 
 }
 
 .offerWrapper {
-  @apply flex flex-col w-full bg-appTitleBgColor overflow-hidden relative rounded-lg; 
+  @apply flex flex-col w-10/12  md:w-full bg-appTitleBgColor overflow-hidden relative rounded-lg; 
 }
 
 .offerWrapper:hover {
@@ -145,7 +145,7 @@ h5 {
 }
 
 .offerWrapper .Card {
-  @apply w-full bg-appBanner lg:max-h-24 lg:h-24 lg:px-4 lg:py-2;
+  @apply w-full bg-appBanner px-2 py-1 lg:max-h-24 lg:h-24 lg:px-4 lg:py-2;
 }
 
 .offerWrapper .Card:hover {
@@ -153,12 +153,12 @@ h5 {
 }
 
 .offerWrapper .Card .hompagecardh2 {
-  @apply font-sans font-semibold text-lg text-appWhite;
+  @apply font-sans font-semibold text-base md:text-lg text-appWhite;
 
 }
 
 .offerWrapper .Card .hompagecardPara{
-  @apply font-serif font-medium lg:text-base text-appWhite lg:mt-1;
+  @apply font-serif font-medium text-sm lg:text-base text-appWhite lg:mt-1;
 }
 
 
@@ -170,7 +170,7 @@ h5 {
 /* landingBanner Section  Goes here */
 
 .bannerboxWrapper {
-  @apply md:w-4/12 bg-appTitleBgColor text-white border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
+  @apply w-10/12 md:w-4/12 bg-appTitleBgColor text-white border-2 border-white h-auto p-6 items-center justify-center flex flex-wrap rounded-lg;  
 }
 
 .bannerboxWrapper:hover {
@@ -180,7 +180,7 @@ h5 {
 
 
 .bannerboxWrapper .bannerboxcardh4 {
-  @apply font-sans font-semibold flex text-center text-lg text-appWhite bg-appBanner px-2 py-1 rounded-2xl;
+  @apply font-sans font-semibold flex text-center text-base md:text-lg text-appWhite bg-appBanner px-2 py-1 rounded-2xl;
 
 }
 
@@ -190,7 +190,7 @@ h5 {
 
 
 .bannerboxWrapper .bannerboxcardPara{
-  @apply font-sans font-medium text-base text-appWhite lg:mt-1 text-center ;
+  @apply font-sans font-medium text-sm md:text-base text-appWhite mt-2 lg:mt-1 text-center ;
 }
 
 /* for bannerboxwrapper2 */
@@ -204,7 +204,7 @@ h5 {
 
 
 .bannerboxWrapper2 .bannerboxcardh4 {
-  @apply font-sans font-semibold flex text-center text-base text-appWhite bg-appBlack px-2 py-1 rounded-2xl;
+  @apply font-sans font-semibold flex text-center text-sm md:text-base text-appWhite bg-appBlack px-2 py-1 rounded-2xl;
 
 }
 
@@ -213,11 +213,11 @@ h5 {
 }
 
 .bannerboxWrapper2 .bannerboxcardPara{
-  @apply font-sans lg:text-xs text-appBlack lg:mt-1 text-center font-semibold ;
+  @apply font-sans text-xs md:text-base text-appBlack mt-1 text-center font-semibold ;
 }
 
 .bannerboxWrapper2:hover .bannerboxcardPara{
-  @apply font-sans font-medium lg:text-xs text-appWhite ;
+  @apply font-sans font-medium text-xs md:text-base text-appWhite ;
 }
 
 

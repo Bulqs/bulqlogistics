@@ -118,16 +118,16 @@ const LandingBanner: React.FC = () => {
         {/* <h2 className='h2Banner'> Ship To Any Part Of The World  </h2>
         <h2 className='h2Banner mt-4'> <span className="text-appBanner">With Peace Of Mind </span> </h2> */}
         <h2 className="h2Banner fir">{firstText}</h2>
-        <h2 className="h2Banner sec mt-4">
+        <h2 className="h2Banner md:mt-4 sec">
           <span className="text-appBanner">{secondText}</span>
         </h2>
       </div>
 
-      <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly'>
+      <div className='flex w-10/12 md:w-7/12 mx-auto itmes-center justify-evenly'>
         <LandingBannerSearch />
       </div>
 
-      <div className='flex md:w-7/12 mx-auto itmes-center justify-evenly gap-4'>
+      <div className='flex md:flex-row flex-col md:w-7/12 mx-auto items-center justify-evenly gap-4'>
         <LandingBannerCard
           title="Pick up Package"
           description="Request Pick off and Drop off Services"
@@ -150,12 +150,12 @@ const LandingBanner: React.FC = () => {
 
       {isModalOpen && selectedCard && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="flex flex-col items-center justify-center bg-appBlack/80 w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor">
-            <div className="flex">
-              <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
+          <div className="flex flex-col items-center justify-center bg-appBlack/90 w-full md:w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor h-full md:h-auto">
+            <div className="flex md:mb-0 mb-3">
+              <h3 className="text-center bg-appWhite text-appBlack px-2 md::px-4 lg:py-1  rounded-2xl">Pick Up Package</h3>
             </div>
 
-            <div className=" flex p-8 md:gap-12 datty">
+            <div className=" flex md:p-8 flex-col md:flex-row md:gap-12 gap-3 datty">
 
               <LandingBannerCard2
                 title="From Me to Another"

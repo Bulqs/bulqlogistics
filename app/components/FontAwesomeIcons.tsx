@@ -10,46 +10,41 @@ import tiktok from '../../public/images/tiktok.svg';
 
 export const FontAwesomeIcons: React.FC = () => {
     return (
-        <div className='bg-white flex w-full rounded-md'>
+        <div className=' flex w-full rounded-md'>
             <div className="flex items-center justify-between gap-2">
-                <Link href="#" className="flex items-center justify-center">
+                <Link href="#" className="flex items-center justify-center bg-white rounded-md">
                     <Image
                         src={twitter}
                         alt="Description of the image"
-                        width={30} // The width of the displayed image
-                        height={30} // The height of the displayed image
+                        className='h-6 md:h-10 w-6 md:w-10'
                     />
                 </Link>
-                <Link href="#" className="flex items-center justify-center">
+                <Link href="#" className="flex items-center justify-center bg-white rounded-md">
                     <Image
                         src={instagram}
                         alt="Description of the image"
-                        width={30} // The width of the displayed image
-                        height={30} // The height of the displayed image
+                        className='h-6 md:h-10 w-6 md:w-10'
                     />
                 </Link>
-                <Link href="#" className="flex items-center justify-center">
+                <Link href="#" className="flex items-center justify-center bg-white rounded-md">
                     <Image
                         src={facebook}
                         alt="Description of the image"
-                        width={30} // The width of the displayed image
-                        height={30} // The height of the displayed image
+                        className='h-6 md:h-10 w-6 md:w-10'
                     />
                 </Link>
-                <Link href="#" className="flex items-center justify-center">
+                <Link href="#" className="flex items-center justify-center bg-white rounded-md">
                     <Image
                         src={linkedin}
                         alt="Description of the image"
-                        width={30} // The width of the displayed image
-                        height={30} // The height of the displayed image
+                        className='h-6 md:h-10 w-6 md:w-10'
                     />
                 </Link>
-                <Link href="#" className="flex items-center justify-center">
+                <Link href="#" className="flex items-center justify-center bg-white rounded-md">
                     <Image
                         src={tiktok}
                         alt="Description of the image"
-                        width={30} // The width of the displayed image
-                        height={30} // The height of the displayed image
+                        className='h-6 md:h-10 w-6 md:w-10'
                     />
                 </Link>
             </div>

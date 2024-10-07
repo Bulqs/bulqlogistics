@@ -43,9 +43,9 @@ const page: React.FC = () => {
 
         <div className="flex flex-col mx-auto w-full py-12">
           {/* Search input section goes here */}
-          <div className='w-full flex items-center justify-center px-8 py-8'>
+          <div className='w-full flex flex-col md:flex-row items-center justify-center md:px-8 md:py-8 px-6 py-4'>
 
-            <div className=' flex p-2 w-9/12 items-center justify-center gap-4'>
+            <div className=' flex flex-col md:flex-row p-2 w-full md:w-9/12 items-center justify-center gap-4'>
               <InputField
                 id="country"
                 name="country"
@@ -75,7 +75,7 @@ const page: React.FC = () => {
 
             </div>
 
-            <div className=' flex w-3/12 h-5 p-2 items-center gap-2 justify-end'>
+            <div className=' flex w-full md:w-3/12 h-5 p-2 md:mt-0 mt-4 items-center justify-between md:justify-end md:gap-2'>
 
               <Button className='flex'>
                 SEARCH
@@ -91,8 +91,8 @@ const page: React.FC = () => {
           {/* Search input section ends here */}
 
           {/* Location Card Section Goes Here */}
-          <div className="flex flex-wrap gap-6 px-8 py-8 w-full">
-            <div className="w-[32.2%]">
+          <div className="flex md:flex-wrap flex-col md:flex-row gap-6 px-8 py-8 w-full">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
@@ -102,7 +102,7 @@ const page: React.FC = () => {
               />
             </div>
 
-            <div className="w-[32.2%]">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
@@ -112,7 +112,7 @@ const page: React.FC = () => {
               />
             </div>
 
-            <div className="w-[32.2%]">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
@@ -122,7 +122,7 @@ const page: React.FC = () => {
               />
             </div>
 
-            <div className="w-[32.2%]">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
@@ -132,7 +132,7 @@ const page: React.FC = () => {
               />
             </div>
 
-            <div className="w-[32.2%]">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
@@ -142,7 +142,7 @@ const page: React.FC = () => {
               />
             </div>
 
-            <div className="w-[32.2%]">
+            <div className="md:w-[32.2%] w-full">
               <LocationCard
                 title="Bulq Lagos"
                 location="Ikeja"
