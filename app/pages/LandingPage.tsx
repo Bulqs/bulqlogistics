@@ -22,13 +22,13 @@ const LandingPage = () => {
     return (
         <>
             <Header />
-            <div className='w-full bg-appWhite lg:pb-24'>
+            <div className='w-full p bg-appWhite lg:pb-24'>
 
                 {/* <div className="w-full flex m-0 p-0">
                 <Header />
             </div> */}
 
-                <div className="w-full items-center justify-center relative md:h-[90vh] md:max-h-[90vh] " style={{
+                <div className="w-full items-center justify-center relative md:h-[90vh] md:max-h-[90vh] py-12 md:py-0 " style={{
                     backgroundImage: `url(${background.src})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -36,13 +36,13 @@ const LandingPage = () => {
                     <LandingBanner />
                 </div>
 
-                <div className="flex flex-wrap items-center justify-center lg:py-20 lg:mb-12 bg-appTitleBgColor">
+                <div className="flex w-full flex-wrap items-center justify-center py-8 lg:py-20 lg:mb-12 bg-appTitleBgColor">
 
                     <OfferCardHeading
                         title="What We Offer"
                     />
 
-                    <div className=' grid md:grid-cols-3 lg:px-24 lg:gap-y-8 lg:py-4  lg:gap-x-10 md:mt-8'>
+                    <div className='md:grid md:grid-cols-3 lg:px-24 gap-y-4 lg:py-4  lg:gap-x-10 md:mt-8 flex flex-col  items-center justify-center'>
 
                         <OfferCard
                             title="Nationwide Delivery"
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 </div>
 
 
-                <div className='flex flex-col lg:px-24 lg:gap-y-8'>
+                <div className='flex flex-col px-8 lg:px-24 gap-y-2 lg:gap-y-8 py-8 md:py-0'>
                     <CardComponentHeading
                         title="Shipping Solution For Our Customers"
                         description="Quickly integrate powerful solutions that gives you more flexibility and control over your percel shipping and logistics progress"
