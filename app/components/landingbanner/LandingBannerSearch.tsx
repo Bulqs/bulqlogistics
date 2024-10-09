@@ -8,7 +8,7 @@ const LandingBannerSearch = () => {
               type="text"
               placeholder="Search"
           />
-          <button type="submit" className="absolute right-1 md:right-7 z-10 rounded-md bg-appTitleBgColor px-3.5 py-2 md:py-5 text-sm md:text-base font-bold text-appWhite shadow-sm hover:bg-black">Track Orders</button>
+          <button type="submit" className="absolute right-1 md:right-7 rounded-md bg-appTitleBgColor px-3.5 py-2 md:py-5 text-sm md:text-base font-bold text-appWhite shadow-sm hover:bg-black z-0">Track Orders</button>
 
       </div>
 

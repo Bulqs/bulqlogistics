@@ -292,12 +292,12 @@ const LandingBanner: React.FC = () => {
 
 
       {isModalOpen3 && selectedCard3 && (
-        <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
-          <div className="bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
+        <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-50">
+          <div className="bg-black md:bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
             {/* <h3 className="text-xl font-bold">{selectedCard3.title}</h3>
             <p>{selectedCard3.description}</p> */}
             <BannerStepForm3 />
-            <button onClick={closeModal3} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+            <button onClick={closeModal3} className="lg:mt-2 px-4 py-2 bg-white md:bg-black text-black md:text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
               <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
             </button>
           </div>

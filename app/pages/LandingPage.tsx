@@ -36,7 +36,7 @@ const LandingPage = () => {
                     <LandingBanner />
                 </div>
 
-                <div className="flex w-full flex-wrap items-center justify-center py-8 lg:py-20 lg:mb-12 bg-appTitleBgColor">
+                <div className="flex w-full flex-wrap items-center justify-center py-8 lg:py-20 lg:mb-12 bg-appTitleBgColor z-0">
 
                     <OfferCardHeading
                         title="What We Offer"
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 </div>
 
 
-                <div className='flex flex-col px-8 lg:px-24 gap-y-2 lg:gap-y-8 py-8 md:py-0'>
+                <div className='flex flex-col px-8 lg:px-24 gap-y-2 lg:gap-y-8 py-8 md:py-0 z-0'>
                     <CardComponentHeading
                         title="Shipping Solution For Our Customers"
                         description="Quickly integrate powerful solutions that gives you more flexibility and control over your percel shipping and logistics progress"

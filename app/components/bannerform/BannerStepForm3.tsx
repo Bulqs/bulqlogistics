@@ -62,10 +62,14 @@ const BannerStepForm3: React.FC = () => {
 
     return (
         <>
-            <div className="py-2 px-4">
-                <div className="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px] mx-auto bg-appWhite">
-                    <div className="lg:max-w-[1124px] lg:max-h-[90vh] md:max-w-[596px] max-w-[343px] mx-auto bg-appWhite px-6 py-4 rounded shadow">
-                        <div>
+            <div className="py-2 px-1 md:px-4">
+                <div className="lg:max-w-[1440px] md:max-w-[744px] max-w-[340px] mx-auto bg-black md:bg-white rounded-md">
+                    <div className="lg:max-w-[1124px] lg:w-[1124px] lg:max-h-[80vh] 
+                    md:max-w-[596px] md:w-[596px] 
+                    w-[335px] max-w-[335px] max-h-[82vh] h-[82vh] 
+                    mx-auto px-2 md:px-6 py-2 md:py-4 rounded shadow overflow-y-scroll md:overflow-y-hidden bg-appWhite">
+
+                        <div className="">
 
                             <WhoToWhoHeading
                                 text="Drop Off"
@@ -88,7 +92,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 1 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         1
                                     </p>
-                                    <p className={`${currentStep === 1 ? ' flex bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'flex text-gray-500'}`} >My Details</p>
+                                    <p className={` text-xs md:text-sm  ${currentStep === 1 ? ' flex bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'flex text-gray-500'}`} >My Details</p>
                                 </div>
                                 <div>
                                     <svg
@@ -106,7 +110,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 2 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         2
                                     </p>
-                                    <p className={`${currentStep === 2 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Delivery Hulb </p>
+                                    <p className={` text-xs md:text-sm  ${currentStep === 2 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Delivery Hulb </p>
                                 </div>
                                 <div>
                                     <svg
@@ -124,7 +128,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 3 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         3
                                     </p>
-                                    <p className={`${currentStep === 3 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Package Details</p>
+                                    <p className={` text-xs md:text-sm ${currentStep === 3 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} >Package Details</p>
                                 </div>
                                 <div>
                                     <svg
@@ -142,7 +146,7 @@ const BannerStepForm3: React.FC = () => {
                                     <p className={`text-sm font-semibold rounded-full w-8 h-8 flex justify-center items-center md:p-8 border-2 border-appTitleBgColor ${currentStep === 4 ? 'bg-appNav text-white' : 'text-gray-500'}`}>
                                         4
                                     </p>
-                                    <p className={`${currentStep === 4 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} > Payment </p>
+                                    <p className={` text-xs md:text-sm  ${currentStep === 4 ? 'bg-appNav mt-2 px-2 p-1 rounded-xl text-appWhite' : 'text-gray-500'}`} > Payment </p>
                                 </div>
                             </div>
                         </div>
@@ -286,7 +290,7 @@ const BannerStepForm3: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="my-0 mt-4 mx-auto w-full xl:mx-0 flex flex-col h-80 overflow-y-scroll ">
-                                        <div className="grid grid-cols-2 mb-0 w-full gap-4">
+                                        <div className="grid  sm:grid-cols-2 mb-0 w-full gap-4 ">
                                             <div className="flex mb-2 w-full">
                                                 <LocationCard
                                                     title="Bulq Lagos"
