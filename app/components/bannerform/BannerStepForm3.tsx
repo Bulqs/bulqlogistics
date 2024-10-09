@@ -496,7 +496,7 @@ const BannerStepForm3: React.FC = () => {
 
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="OTP" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="OTP" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     OTP
                                                 </label>
                                                 <div className="flex">
@@ -508,13 +508,13 @@ const BannerStepForm3: React.FC = () => {
                                                         required={true}
                                                         onChange={(e) => setFormData({ ...formData, cardOTP: e.target.value })}
                                                     />
-                                                    <button type="submit" className="relative right-2 z-10 rounded-md bg-appTitleBgColor px-3.5 py-2.5 text-sm font-bold text-appWhite shadow-sm hover:bg-black">Resend OTP</button>
+                                                    <button type="submit" className="relative right-2 z-10 rounded-md bg-appTitleBgColor px-3.5 py-2.5 text-xs md:text-sm font-bold text-appWhite shadow-sm hover:bg-black">Resend OTP</button>
                                                 </div>
 
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="OTP" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="OTP" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     PAYMENT
                                                 </label>
                                                 <div className="flex">

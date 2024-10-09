@@ -15,7 +15,7 @@ const WhoToWhoHeading: React.FC<WhoToWhoHeadingProps> = ({
 }) => {
     return (
         <div className={`flex items-center justify-between w-full ${bgColor} py-0 px-0 mb-2 ${additionalClasses}`}>
-            <p className={`text-xl ${textColor} font-semibold leading-tight text-center`}>
+            <p className={`text-md md:text-xl ${textColor} font-semibold leading-tight text-center`}>
                 {text}
             </p>
         </div>

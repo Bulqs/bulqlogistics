@@ -189,10 +189,10 @@ const LandingBanner: React.FC = () => {
 
           {/* Render inner modal on top of the first modal */}
           {isInnerModalOpen && (
-            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+            <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-black md:bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
                 <BannerStepForm /> {/* Place the form here */}
-                <button onClick={() => setIsInnerModalOpen(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                <button onClick={() => setIsInnerModalOpen(false)} className="lg:mt-2 px-4 py-2 bg-white md:bg-black text-black md:text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
                   <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
                 </button>
               </div>
@@ -202,10 +202,10 @@ const LandingBanner: React.FC = () => {
 
           {/* Render inner midek on top of the first model for second div */}
           {isInnerModalOpen2 && (
-            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+            <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-black md:bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
                 <BannerStepForm2 /> {/* Place the form here */}
-                <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
+                <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-white md:bg-black text-black md:text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
                   <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
                 </button>
               </div>
@@ -217,13 +217,14 @@ const LandingBanner: React.FC = () => {
       {/* first modal section ends here */}
 
       {isModalOpen2 && selectedCard2 && (
+
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="flex flex-col items-center justify-center bg-appBlack/80 w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor">
-            <div className="flex">
-              <h3 className="text-center bg-appWhite text-appBlack lg:px-4 lg:py-1  rounded-2xl">Deliver Package</h3>
+          <div className="flex flex-col items-center justify-center bg-appBlack/90 w-full md:w-11/12 p-8 rounded-lg shadow-xl shadow-appTitleBgColor h-full md:h-auto">
+            <div className="flex md:mb-0 mb-3">
+              <h3 className="text-center bg-appWhite text-appBlack px-2 md::px-4 lg:py-1  rounded-2xl"> Deliver Package</h3>
             </div>
 
-            <div className=" flex p-8 md:gap-12">
+            <div className=" flex md:p-8 flex-col md:flex-row md:gap-12 gap-3">
 
               <LandingBannerCard2
                 title="From Me to Another"
@@ -261,8 +262,8 @@ const LandingBanner: React.FC = () => {
 
           {/* Render inner modal on top of the first modal */}
           {isInnerModalOpen && (
-            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+            <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
                 <BannerStepForm /> {/* Place the form here */}
                 <button onClick={() => setIsInnerModalOpen(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
                   <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
@@ -274,9 +275,8 @@ const LandingBanner: React.FC = () => {
 
           {/* Render inner midek on top of the first model for second div */}
           {isInnerModalOpen2 && (
-            <div className="fixed inset-0 lg:pt-2 flex items-start justify-center bg-black bg-opacity-70 z-60">
-              <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
-
+            <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
+              <div className="bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
                 <BannerStepForm2 /> {/* Place the form here */}
                 <button onClick={() => setIsInnerModalOpen2(false)} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
                   <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
@@ -292,12 +292,11 @@ const LandingBanner: React.FC = () => {
 
 
       {isModalOpen3 && selectedCard3 && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center ">
+        <div className="fixed inset-0 pt-2 md:pt-4 flex items-start justify-center bg-black bg-opacity-70 z-60">
+          <div className="bg-white px-4 pt-2 md:pt-4 md:px-4 p-2 md:py-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
             {/* <h3 className="text-xl font-bold">{selectedCard3.title}</h3>
             <p>{selectedCard3.description}</p> */}
             <BannerStepForm3 />
-           
             <button onClick={closeModal3} className="lg:mt-2 px-4 py-2 bg-black text-white rounded lg:ml-4 flex items-center justify-between gap-2 ">
               <IoMdCloseCircle className="text-red-700 text-2xl" />  Close Form
             </button>
