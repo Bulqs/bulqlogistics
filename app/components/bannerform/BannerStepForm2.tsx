@@ -439,7 +439,7 @@ const BannerStepForm2: React.FC = () => {
                                                                 defaultChecked={true}
                                                                 className="extra-styles-if-any"
                                                             />
-                                                            <span className="ml-2 text-sm leading-4 text-gray-800 dark:text-gray-100 font-semibold">
+                                                            <span className="ml-2 text-xs md:text-sm leading-4 text-gray-800 dark:text-gray-100 font-semibold">
                                                                 Standard Delivery (4-5 Business Days)
                                                             </span>
                                                         </label>
@@ -454,7 +454,7 @@ const BannerStepForm2: React.FC = () => {
                                                                 defaultChecked={true}
                                                                 className="extra-styles-if-any"
                                                             />
-                                                            <span className="ml-2 text-sm leading-4 font-semibold text-gray-800 dark:text-gray-100">
+                                                            <span className="ml-2 text-xs md:text-sm leading-4 font-semibold text-gray-800 dark:text-gray-100">
                                                                 Express Delivery (1-2 Business Days)
                                                             </span>
                                                         </label>
