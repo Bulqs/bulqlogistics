@@ -43,15 +43,17 @@ const page: React.FC = () => {
     };
 
     return (
-        <div className='w-full bg-appBanner/60 controller'
+        <div className='w-full min-h-screen md:min-h-screen bg-appBlue/20 overflow-hidden'
             style={{
                 backgroundImage: `url(${shipping.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-        }}>
-            <div className="flex min-h-full flex-1 py-10 px-16 bg-black/70">
-                <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-16 xl:px-16 lg:w-[900px]">
-                    <div className=" w-full max-w-sm lg:w-full lg:max-w-full bg-appTitleBgColor rounded-xl md:p-4 lg:p-6">
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            <div className="flex min-h-screen md:min-h-screen flex-1 py-0 px-3 md:py-4 md:px-10 bg-black/70 overflow-hidden">
+                <div className="flex flex-1 flex-col justify-center  py-0 md:py-4 px-1 sm:px-3 md:px-6 lg:flex-none w-[330px] md:w-[550px] lg:px-16 xl:px-16 lg:w-[900px]">
+                    <div className=" w-full max-w-sm lg:w-full lg:max-w-full bg-appTitleBgColor rounded-xl p-4 lg:p-6">
+
                         <div className='w-full'>
                             <div className="flex items-center justify-center">
                                 <Image
@@ -59,11 +61,11 @@ const page: React.FC = () => {
                                     alt="Description of the image"
                                     width={300}
                                     height={400}
-                                    className=""
+                                    className="w-36 md:w-72"
                                 />
                             </div>
 
-                            <h2 className="flex mt-2 text-2xl font-bold mx-auto w-96 leading-9 tracking-tight items-center justify-center text-white bg-appNav/55 px-2 py-1 rounded-xl ">
+                            <h2 className="flex mt-2 text-base md:text-2xl font-bold mx-auto w-10/12 md:w-96 leading-9 tracking-tight items-center justify-center text-white bg-appNav/55 px-2 md:py-1 rounded-md md:rounded-xl">
                                 Create Your Shipping Account
                             </h2>
                             
@@ -239,15 +241,15 @@ const page: React.FC = () => {
                                 </div>
 
                                 <div className="mt-3 grid grid-cols-2 gap-4">
-                                    <Button className='bg-appNav/70 w-full'>
-                                        <Link href="/signin" className=" w-full flex justify-center items-center gap-3">
+                                    <Button className='bg-appNav/70 w-full flex justify-center items-center'>
+                                        <Link href="/signin" className=" w-full flex justify-center items-center gap-1 md:gap-3 ">
                                             <RiLoginCircleFill className="text-2xl" /> <span className=""> Login Account </span>
                                         </Link>
                                     </Button>
 
-                                    <Button  className='bg-black w-full'>
-                                        <Link href="/" className="w-full flex justify-center items-center gap-3">
-                                            <IoHome className="text-2xl" /> <span className=""> Back to Homepage  </span>
+                                    <Button className='bg-black flex justify-center items-center'>
+                                        <Link href="/" className="w-full flex justify-start items-center gap-1 md:gap-3">
+                                            <IoHome className="text-lg md:text-2xl" /> <span className=""> Back to Homepage  </span>
                                         </Link>
                                     </Button>
                                 </div>

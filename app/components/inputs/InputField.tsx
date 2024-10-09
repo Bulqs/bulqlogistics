@@ -145,7 +145,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     value={value}
                     required={required}
                     onChange={onChange}
-                    className="placeholder:text-xs font-semibold bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100 "
+                    className="placeholder:text-xs font-semibold bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-xs md:text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100 "
                 >
                     <option value="" disabled>
                         {placeholder}
@@ -161,7 +161,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     <select
                         value={countryCode}
                         onChange={onCountryCodeChange} // Update country code
-                        className="bg-gray-200 text-gray-700 border border-gray-300 dark:border-gray-700 py-2 px-3 rounded-l focus:outline-none"
+                        className="w-36 md:w-44 bg-gray-200 text-gray-700 border border-gray-300 dark:border-gray-700 py-2 px-3 rounded-l focus:outline-none"
                     >
                         {countryCodes.map((country, index) => (
                             <option key={index} value={country.code}>
@@ -177,7 +177,7 @@ const InputField: React.FC<InputFieldProps> = ({
                         placeholder={placeholder}
                         required={required}
                         onChange={onChange}
-                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded-r text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
+                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded-r text-xs md:text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
                     />
                 </div>
             ) : (
@@ -189,7 +189,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     placeholder={placeholder}
                     required={required}
                     onChange={onChange}
-                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
+                            className="placeholder:text-xs bg-white w-full border border-gray-300 dark:border-gray-700 pl-1 md:pl-3 py-2 shadow-sm rounded text-xs md:text-sm focus:outline-none bg-transparent focus:border-indigo-700 text-gray-800 dark:text-gray-100"
                 />
             )}
         </>

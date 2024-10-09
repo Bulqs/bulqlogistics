@@ -22,16 +22,17 @@ const page: React.FC = () => {
 
 
     return (
-        <div className='w-full bg-appBlue/20'
+        <div className='w-full min-h-screen md:max-h-screen bg-appBlue/20 overflow-hidden'
             style={{
                 backgroundImage: `url(${shipping.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
         >
-            <div className="flex min-h-full flex-1 p-10 bg-black/70">
-                <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 lg:w-[700px]">
-                    <div className=" w-full max-w-sm lg:w-full lg:max-w-full bg-appTitleBgColor rounded-xl md:p-4 lg:p-6">
+            <div className="flex  flex-1 py-0 px-3 md:py-10 md:px-10 bg-black/70 overflow-hidden">
+                <div className="flex flex-1 flex-col justify-center  py-0 md:py-12 px-1 sm:px-3 md:px-6 lg:flex-none lg:px-20 xl:px-24 w-[330px] md:w-[550px] lg:w-[700px]">
+                    <div className=" w-full max-w-sm lg:w-full lg:max-w-full bg-appTitleBgColor rounded-xl p-4 lg:p-6">
+                        
                         <div className='w-full'>
                             <div className="flex items-center justify-center">
                                 <Image
@@ -39,14 +40,14 @@ const page: React.FC = () => {
                                     alt="Description of the image"
                                     width={300}
                                     height={400}
-                                    className=""
+                                    className="w-36 md:w-72"
                                 />
                             </div>
 
-                            <h2 className="flex mt-2 text-2xl font-bold mx-auto w-96 leading-9 tracking-tight items-center justify-center text-white bg-appNav/55 px-2 py-1 rounded-xl ">
+                            <h2 className="flex mt-2 text-base md:text-2xl font-bold mx-auto w-10/12 md:w-96 leading-9 tracking-tight items-center justify-center text-white bg-appNav/55 px-2 md:py-1 rounded-md md:rounded-xl">
                                 Login Your Shipping Account
                             </h2>
-                            <p className="flex items-center justify-center font-semibold mt-2 text-sm leading-6 text-white">
+                            <p className="flex flex-col md:flex-row items-center justify-center font-semibold mt-2 text-xs md:text-sm md:leading-6 text-white">
                                 <span className="mr-2"> Welcome Back, {' '} </span>
                                 <Link href={'#'} className=" text-white hover:text-indigo-500">
                                     Provide your login credentials to continue
@@ -58,7 +59,7 @@ const page: React.FC = () => {
                         <div className="mt-6 w-full">
                             <div>
                                 <form action="#" method="POST" className="space-y-6">
-                                    <div className="flex flex-col bg-appNav/55 px-2 md:px-4 lg:px-8 py-4 gap-y-2 lg:gap-y-4 rounded-2xl">
+                                    <div className="flex flex-col bg-appNav/55 px-2 md:px-4 lg:px-8 py-4 gap-y-2 lg:gap-y-4 rounded-lg md:rounded-xl">
                                         <div>
                                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
                                                 Email address
@@ -135,15 +136,15 @@ const page: React.FC = () => {
                                 </div>
 
                                 <div className="mt-3 grid grid-cols-2 gap-4">
-                                    <Button className='bg-appNav/70 flex gap-3 justify-center items-center'>
-                                        <Link href="/signup" className=" w-full flex justify-center items-center gap-3">
-                                            <FaUserPlus className="text-2xl" /> <span className="">  Create Account </span>
+                                    <Button className='bg-appNav/70 flex justify-center items-center'>
+                                        <Link href="/signup" className="w-full flex justify-center items-center gap-1 md:gap-3">
+                                            <FaUserPlus className=" text-lg md:text-2xl" /> <span className="">  Create Account </span>
                                         </Link>
                                     </Button>
 
-                                    <Button className='bg-black flex gap-3 justify-center items-center'>
-                                        <Link href="/" className=" w-full flex justify-center items-center gap-3">
-                                            <IoHome className="text-2xl" /> <span className="">  Back to Homepage </span>
+                                    <Button className='bg-black flex justify-center items-center'>
+                                        <Link href="/" className=" w-full flex justify-start items-center gap-1 md:gap-3">
+                                            <IoHome className="text-lg md:text-2xl" /> <span className="">  Back to Homepage </span>
                                         </Link>
                                     </Button>
                                 </div>

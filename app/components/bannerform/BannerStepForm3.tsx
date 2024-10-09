@@ -158,7 +158,7 @@ const BannerStepForm3: React.FC = () => {
                                     <div className="my-2 mx-auto xl:w-full xl:mx-0">
                                         <div className="xl:flex lg:flex md:flex flex-wrap justify-between">
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="FirstName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="FirstName" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     First Name
                                                 </label>
 
@@ -175,7 +175,7 @@ const BannerStepForm3: React.FC = () => {
 
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="LastName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="LastName" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Last Name
                                                 </label>
 
@@ -192,7 +192,7 @@ const BannerStepForm3: React.FC = () => {
 
                                             </div>
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="email2" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="email2" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Email
                                                 </label>
                                                 <div className="relative">
@@ -209,7 +209,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Phonenumber" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="Phonenumber" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Phone Number
                                                 </label>
 
@@ -224,7 +224,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="StreetAddress" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="StreetAddress" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Street Address
                                                 </label>
 
@@ -241,7 +241,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
                                             
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="City" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="City" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Country
                                                 </label>
                                                 <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
@@ -258,7 +258,7 @@ const BannerStepForm3: React.FC = () => {
 
                                             
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Country" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="Country" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     City
                                                 </label>
                                                 <div className="border border-gray-300 dark:border-gray-700 shadow-sm rounded flex relative">
@@ -289,7 +289,7 @@ const BannerStepForm3: React.FC = () => {
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className="my-0 mt-4 mx-auto w-full xl:mx-0 flex flex-col h-80 overflow-y-scroll ">
+                                    <div className="my-0 mt-4 mx-auto w-full xl:mx-0 flex flex-col md:h-64 overflow-y-scroll">
                                         <div className="grid  sm:grid-cols-2 mb-0 w-full gap-4 ">
                                             <div className="flex mb-2 w-full">
                                                 <LocationCard
@@ -341,7 +341,7 @@ const BannerStepForm3: React.FC = () => {
                                     <div className="my-2 mx-auto xl:w-full xl:mx-0">
                                         <div className="xl:flex lg:flex md:flex flex-wrap justify-between">
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="FirstName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="FirstName" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Package Name
                                                 </label>
 
@@ -357,7 +357,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="StreetAddress" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="StreetAddress" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Weight (kg)
                                                 </label>
                                                 <InputField
@@ -371,7 +371,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="StreetAddress" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="StreetAddress" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Shipment Type
                                                 </label>
 
@@ -386,7 +386,7 @@ const BannerStepForm3: React.FC = () => {
                                                                 defaultChecked={true}
                                                                 className="extra-styles-if-any"
                                                             />
-                                                            <span className="ml-2 text-sm leading-4 text-gray-800 dark:text-gray-100 font-semibold">
+                                                            <span className="ml-2 text-xs md:text-sm leading-4 text-gray-800 dark:text-gray-100 font-semibold">
                                                                 Standard Delivery (4-5 Business Days)
                                                             </span>
                                                         </label>
@@ -401,7 +401,7 @@ const BannerStepForm3: React.FC = () => {
                                                                 defaultChecked={true}
                                                                 className="extra-styles-if-any"
                                                             />
-                                                            <span className="ml-2 text-sm leading-4 font-semibold text-gray-800 dark:text-gray-100">
+                                                            <span className="ml-2 text-xs md:text-sm leading-4 font-semibold text-gray-800 dark:text-gray-100">
                                                                 Express Delivery (1-2 Business Days)
                                                             </span>
                                                         </label>
@@ -414,7 +414,7 @@ const BannerStepForm3: React.FC = () => {
 
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="Message" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="Message" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Package Description
                                                 </label>
                                                 <ReusableTextarea
@@ -434,7 +434,7 @@ const BannerStepForm3: React.FC = () => {
                                     <div className="my-2 mx-auto xl:w-full xl:mx-0">
                                         <div className="xl:flex lg:flex md:flex flex-wrap justify-between">
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="CardName" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="CardName" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Card Name
                                                 </label>
 
@@ -450,7 +450,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="CardNumber" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="CardNumber" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Card Number
                                                 </label>
 
@@ -466,7 +466,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="CardExpire" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="CardExpire" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     Card Expiry Date
                                                 </label>
 
@@ -482,7 +482,7 @@ const BannerStepForm3: React.FC = () => {
                                             </div>
 
                                             <div className="xl:w-2/5 lg:w-2/5 md:w-2/5 flex flex-col mb-2">
-                                                <label htmlFor="CardExpire" className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100">
+                                                <label htmlFor="CardExpire" className="pb-2 text-xs md:text-sm font-bold text-gray-800 dark:text-gray-100">
                                                     CVC
                                                 </label>
 
